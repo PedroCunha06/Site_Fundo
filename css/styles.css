@@ -1,0 +1,265 @@
+/*-------------- VARIAVEIS COLORS -----------------*/
+:root {
+/*------- BACKGROUND --------*/
+    --dark1: rgb(3, 0, 28), rgb(48, 30, 103), rgb(91, 143, 185), rgb(182, 234, 218);
+    --dark2: rgb(26, 26, 64), rgb(39, 0, 130), rgb(122, 11, 192), rgb(250, 88, 182);
+    --space: rgb(3, 4, 94), rgb(0, 58, 151), rgb(144, 224, 239), 
+    rgb(202, 240, 248);
+    --night: rgb(0, 0, 0) 40%, rgb(40, 42, 58), rgb(115, 95, 50), rgb(198, 151, 73);
+    --day: rgb(37, 49, 109) 40%, rgb(95, 111, 148), rgb(151, 210, 236), rgb(254, 245, 172);
+    --day2: rgb(6, 40, 61) 40%,  rgb(19, 99, 223), rgb(71, 181, 255), rgb(223, 246, 255);
+
+/*------- FACES --------*/
+    --darkblue: black, blue;
+
+}
+
+
+/*------------------ Gradiente --------------------*/
+body {
+    /*----- Margin -----*/
+    margin: 0;
+    /*----- Size -----*/
+    width: 100%;
+    height: 100%;
+    /*----- Position -----*/
+    display: flex;
+    justify-content: center;
+}
+
+.color {
+    margin: 0;
+    width: 300vh;
+    height: 100vh;
+
+    background-image: linear-gradient(45deg, var(--day2));
+    background-size: 300% 300%;
+   
+    animation: colors 10s ease infinite;
+}
+
+/*----------------- ANIMATION ----------------*/
+@keyframes colors {
+    from {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    to {
+        background-position: 0% 50%;
+    }
+
+}
+
+/*------------------ Estrelado --------------------*/
+.stars {
+    margin-left: 38%;
+    position: relative;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    box-shadow:
+        200px -100px white,
+        500px -50px white,
+        60px 30px white,
+        -300px 60px white,
+        -200px 130px white,
+        400px 200px white,
+        600px 300px white,
+        -250px 400px white,
+        450px 400px white,
+        -190px 500px white,
+        40px 600px white,
+        150px 700px white,
+        100px 450px white,
+        320px 760px white,
+        -140px 900px white,
+        1600px 300px white,
+        -850px 390px white,
+        1450px 440px white,
+        -790px 570px white,
+        140px 630px white,
+        950px 780px white,
+        1100px 650px white,
+        1320px 60px white,
+        -840px 900px white,
+        -650px 830px white;
+
+    animation: anim-stars 5s linear infinite;
+}
+
+.stars::after {
+    content: " ";
+    position: absolute;
+    top: 1000px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    box-shadow:
+        200px -100px white,
+        500px -50px white,
+        60px 30px white,
+        -300px 60px white,
+        -200px 130px white,
+        400px 200px white,
+        600px 300px white,
+        -250px 400px white,
+        450px 400px white,
+        -190px 500px white,
+        40px 600px white,
+        150px 700px white,
+        100px 450px white,
+        320px 760px white,
+        -140px 900px white,
+        1600px 300px white,
+        -850px 390px white,
+        1450px 440px white,
+        -790px 570px white,
+        140px 630px white,
+        950px 780px white,
+        1100px 650px white,
+        1320px 60px white,
+        -840px 900px white,
+        -650px 830px white;
+}
+
+/*----------------- ANIMATION ----------------*/
+@keyframes anim-stars {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-1000px);
+    }
+}
+
+
+/*--------------------- FORMS ---------------------*/
+/*--------------------- CUBE ----------------------*/
+#cubo {
+    /*----- Size -----*/
+    width: auto;
+    height: auto;
+    /*----- 3D -----*/
+    transform-style: preserve-3d;
+}
+
+.cube {
+    /*----- Size -----*/
+    width: 300px;
+    height: 300px;
+    /*----- Margin -----*/
+    margin-top: 39vh;
+    margin-left: 38%;
+    /*----- 3D -----*/
+    transform-style: preserve-3d;
+    /*----- Animation -----*/
+    animation: rotate 10s linear infinite;
+}
+
+.face {
+    /*----- Size -----*/
+    width: 300px;
+    height: 300px;
+    /*----- Position -----*/
+    position: absolute;
+    display: flex;
+    align-items: center;
+    /*----- Designe -----*/
+    border: 2px solid rgb(255, 255, 255);
+    background: black;
+    opacity: 0.8;
+
+   /* animation: border 10s linear infinite;*/
+   animation: colorface 10s ease infinite;
+}
+
+.front {
+    transform: translateZ(150px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(150px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(150px);
+}
+
+
+/*----------------- ANIMATION ----------------*/
+
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+@keyframes colorface {
+    from {
+        background: black;
+    }
+
+    to {
+        background: blue;
+    }
+}
+
+
+@keyframes border {
+    from {
+        border-color: white;
+    }
+
+    14% {
+        border-color: red;
+    }
+
+    28% {
+        border-color: orange;
+    }
+
+    42% {
+        border-color: yellow;
+    }
+
+    56% {
+        border-color: green;
+    }
+
+    70% {
+        border-color: blue;
+    }
+
+    84% {
+        border-color: indigo;
+    }
+
+    98% {
+        border-color: purple;
+    }
+
+    to {
+        border-color: white;
+    }
+}
