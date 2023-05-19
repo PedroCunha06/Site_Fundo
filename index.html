@@ -7,22 +7,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Screen Magic</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="java/java.js"></script>
+    <script defer src="javascript/java.js"></script>
 </head>
 
 <body>
     <div class="color">
-        <div class="stars"></div> 
-            <div id="cubo">
-                <div class="cube">
-                    <div class="face front"></div>
-                    <div class="face right"></div>
-                    <div class="face left"></div>
-                    <div class="face back"></div>
-                    <div class="face top"></div>
-                    <div class="face bottom"></div>
-                </div>
+        <div class="stars"></div>
+        <button id="botao"><img id="img1" src="image/config.png" alt="">
+        </button>
+        <div id="config">
+            <div>
+                <p>Fundo</p>
+                <button onclick="escolhaFundo(this.id)" id="dark1" class="botoes_fundo">Dark 1</button>
+                <button onclick="escolhaFundo(this.id)" id="dark2" class="botoes_fundo">Dark 2</button>
+                <button onclick="escolhaFundo(this.id)" id="night" class="botoes_fundo">Night</button>
+                <button onclick="escolhaFundo(this.id)" id="day1" class="botoes_fundo">Day 1</button>
+                <button onclick="escolhaFundo(this.id)" id="day2" class="botoes_fundo">Day 2</button>
+                <button onclick="escolhaFundo(this.id)" id="day3" class="botoes_fundo">Day 3</button>
             </div>
+            <hr>
+            <div>
+                <p>Face</p>
+                <button onclick="escolhaCor(this.id)" id="blue" class="botoes_face">Black - Blue</button>
+                <button onclick="escolhaCor(this.id)" id="red" class="botoes_face">Black - Red</button>
+                <button onclick="escolhaCor(this.id)" id="yellow" class="botoes_face">Black - Yellow</button>
+                <button onclick="escolhaCor(this.id)" id="pink" class="botoes_face">Black - Pink</button>
+            </div>
+            <hr>
+            <div>
+                <button id="aply">Aply</button>
+            </div>
+        </div>
+        <div id="cubo">
+            <div class="cube">
+                <div class="face front"></div>
+                <div class="face right"></div>
+                <div class="face left"></div>
+                <div class="face back"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+        </div>
     </div>
 </body>
 

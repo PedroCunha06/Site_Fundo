@@ -1,40 +1,47 @@
 /*-------------- VARIAVEIS COLORS -----------------*/
 :root {
-/*------- BACKGROUND --------*/
-    --dark1: rgb(3, 0, 28), rgb(48, 30, 103), rgb(91, 143, 185), rgb(182, 234, 218);
-    --dark2: rgb(26, 26, 64), rgb(39, 0, 130), rgb(122, 11, 192), rgb(250, 88, 182);
-    --space: rgb(3, 4, 94), rgb(0, 58, 151), rgb(144, 224, 239), 
-    rgb(202, 240, 248);
+/*------- BACKGROUND SIMPLE -------*/
+    --black: black;
+    --blue: rgb(37, 49, 109);
+    --purple: rgb(39, 0, 130);
+
+/*------- BACKGROUND GRADIENT --------*/
+    --dark1: rgb(3, 0, 28) 40%, rgb(48, 30, 103), rgb(91, 143, 185), rgb(182, 234, 218);
+    --dark2: rgb(26, 26, 64) 40%, rgb(33, 0, 110), rgb(122, 11, 192), rgba(138, 0, 80, 0.914);
     --night: rgb(0, 0, 0) 40%, rgb(40, 42, 58), rgb(115, 95, 50), rgb(198, 151, 73);
-    --day: rgb(37, 49, 109) 40%, rgb(95, 111, 148), rgb(151, 210, 236), rgb(254, 245, 172);
-    --day2: rgb(6, 40, 61) 40%,  rgb(19, 99, 223), rgb(71, 181, 255), rgb(223, 246, 255);
+    --day1: rgb(22, 36, 106) 40%, rgb(95, 111, 148), rgb(53, 138, 175), rgb(252, 225, 23);
+    --day2: rgb(6, 40, 61) 40%,  rgb(15, 72, 157), rgb(40, 101, 142), rgb(122, 137, 143);
+    --day3: rgb(3, 4, 94) 40%, rgb(0, 58, 151), rgb(57, 150, 166), rgba(202, 240, 248, 0.486);
 
 /*------- FACES --------*/
-    --darkblue: black, blue;
-
+    --darkblue: black 50%, blue;
+    --darkred: black 50%, red;
+    --darkyellow: black 50%, rgb(193, 190, 0);
+    --darkpink: black 50%, rgb(99, 3, 188);
 }
 
 
 /*------------------ Gradiente --------------------*/
 body {
-    /*----- Margin -----*/
-    margin: 0;
     /*----- Size -----*/
     width: 100%;
     height: 100%;
     /*----- Position -----*/
     display: flex;
     justify-content: center;
+    margin: 0;
 }
 
 .color {
-    margin: 0;
+    /*----- Size -----*/
     width: 300vh;
     height: 100vh;
-
-    background-image: linear-gradient(45deg, var(--day2));
+    /*----- Position -----*/
+    margin: 0;
+    /*----- Designer -----*/
+    background: linear-gradient(45deg, var(--dark1));
     background-size: 300% 300%;
-   
+    /*----- Animation -----*/
     animation: colors 10s ease infinite;
 }
 
@@ -56,10 +63,13 @@ body {
 
 /*------------------ Estrelado --------------------*/
 .stars {
-    margin-left: 38%;
-    position: relative;
+    /*----- Size -----*/
     width: 4px;
     height: 4px;
+    /*----- Position -----*/
+    margin-left: 38%;
+    position: relative;
+    /*----- Designer -----*/
     border-radius: 50%;
     box-shadow:
         200px -100px white,
@@ -87,16 +97,19 @@ body {
         1320px 60px white,
         -840px 900px white,
         -650px 830px white;
-
+    /*----- Animation -----*/
     animation: anim-stars 5s linear infinite;
 }
 
 .stars::after {
+    /*----- Size -----*/
+    width: 4px;
+    height: 4px;
+    /*----- Position -----*/
     content: " ";
     position: absolute;
     top: 1000px;
-    width: 4px;
-    height: 4px;
+    /*----- Designer -----*/
     border-radius: 50%;
     box-shadow:
         200px -100px white,
@@ -137,8 +150,6 @@ body {
     }
 }
 
-
-/*--------------------- FORMS ---------------------*/
 /*--------------------- CUBE ----------------------*/
 #cubo {
     /*----- Size -----*/
@@ -152,13 +163,13 @@ body {
     /*----- Size -----*/
     width: 300px;
     height: 300px;
-    /*----- Margin -----*/
+    /*----- Position -----*/
     margin-top: 39vh;
     margin-left: 38%;
     /*----- 3D -----*/
     transform-style: preserve-3d;
     /*----- Animation -----*/
-    animation: rotate 10s linear infinite;
+    animation: rotate2 10s linear infinite;
 }
 
 .face {
@@ -169,13 +180,14 @@ body {
     position: absolute;
     display: flex;
     align-items: center;
-    /*----- Designe -----*/
+    /*----- Designer -----*/
     border: 2px solid rgb(255, 255, 255);
-    background: black;
-    opacity: 0.8;
-
-   /* animation: border 10s linear infinite;*/
-   animation: colorface 10s ease infinite;
+    background: linear-gradient(-180deg, var(--darkblue));
+    background-size: 175% 175%;
+    opacity: 1;
+    /*----- Animation -----*/
+    animation: 
+    face 10s linear infinite;
 }
 
 .front {
@@ -196,35 +208,52 @@ body {
 
 .top {
     transform: rotateX(90deg) translateZ(150px);
+    background: black;
 }
 
 .bottom {
     transform: rotateX(-90deg) translateZ(150px);
+    background: black;
 }
 
 
 /*----------------- ANIMATION ----------------*/
 
-@keyframes rotate {
+@keyframes rotate1 {
     from {
+        
         transform: rotateX(0deg) rotateY(0deg);
     }
 
     to {
+        transform: rotateZ(5deg);
         transform: rotateX(360deg) rotateY(360deg);
     }
 }
 
-@keyframes colorface {
+@keyframes rotate2 {
     from {
-        background: black;
+        transform: rotateY(0deg) rotateX(-5deg);
     }
 
     to {
-        background: blue;
+        transform: rotateY(360deg) rotateX(-5deg);
     }
 }
 
+@keyframes face {
+    from {
+        background-position: 0% 25%;
+    }
+
+    50% {
+        background-position: 150% 100%;
+    }
+
+    to {
+        background-position: 0% 25%;
+    }
+}
 
 @keyframes border {
     from {
@@ -262,4 +291,81 @@ body {
     to {
         border-color: white;
     }
+}
+
+/*--------------------- CONFIGS ---------------------*/
+#botao {
+    /*----- Size -----*/
+    width: 60px;
+    height: 60px;
+    /*----- Designer -----*/
+    background: transparent; 
+    border-radius: 50%;
+}
+#img1 {
+    /*----- Size -----*/
+    width: 100%;
+    height:100%;
+}
+
+#config {
+    /*----- Size -----*/
+    width: 580px;
+    height: auto;
+    /*----- Position -----*/
+    margin-top: 10px;
+    padding: 0;
+    display: none;
+    /*----- Designer -----*/
+    background-color: rgb(0, 0, 0);
+    font-size: 20px;
+    border: 3px solid rgb(251, 251, 251);
+    border-radius: 10px;
+
+}
+
+
+#config p {
+    /*----- Position -----*/
+    margin-top: 2px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    padding: 0;
+
+    /*----- Designer -----*/
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:  white;
+}
+
+.botoes_fundo {
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    font-size: 20px;
+    border-radius: 20px;
+
+    background-color: transparent;
+    color: white;
+}
+
+.botoes_face {
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    font-size: 20px;
+    border-radius: 20px;
+
+    background-color: transparent;
+    color: white;
+}
+
+#aply {
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    font-size: 30px;
+    border-radius: 20px;
+
+    background-color: transparent;
+    color: white;
 }
