@@ -42,7 +42,7 @@ body {
     background: linear-gradient(45deg, var(--dark1));
     background-size: 300% 300%;
     /*----- Animation -----*/
-    animation: colors 10s ease infinite;
+    animation: colors 15s ease infinite;
 }
 
 /*----------------- ANIMATION ----------------*/
@@ -69,6 +69,7 @@ body {
     /*----- Position -----*/
     margin-left: 38%;
     position: relative;
+    display: block;
     /*----- Designer -----*/
     border-radius: 50%;
     box-shadow:
@@ -168,7 +169,10 @@ body {
     margin-left: 38%;
     /*----- 3D -----*/
     transform-style: preserve-3d;
-    /*----- Animation -----*/
+    transform: rotateY(45deg)  rotateX(-20deg);
+}
+
+#cube_animation {
     animation: rotate2 10s linear infinite;
 }
 
@@ -185,9 +189,21 @@ body {
     background: linear-gradient(-180deg, var(--darkblue));
     background-size: 175% 175%;
     opacity: 1;
-    /*----- Animation -----*/
     animation: 
     face 10s linear infinite;
+}
+
+.face_2 {
+    /*----- Size -----*/
+    width: 300px;
+    height: 300px;
+    /*----- Position -----*/
+    position: absolute;
+    display: flex;
+    align-items: center;
+    /*----- Designer -----*/
+    border: 2px solid rgb(255, 255, 255);
+    opacity: 1;
 }
 
 .front {
@@ -321,7 +337,8 @@ body {
     font-size: 20px;
     border: 3px solid rgb(251, 251, 251);
     border-radius: 10px;
-
+    /*----- Animation -----*/
+    transition: all 2s;
 }
 
 
@@ -338,34 +355,67 @@ body {
 }
 
 .botoes_fundo {
+    /*----- Position -----*/
     margin-left: 10px;
     margin-bottom: 10px;
-
+    /*----- Designer -----*/
     font-size: 20px;
     border-radius: 20px;
+    background-color: transparent;
+    color: white;
+}
 
+.botoes_fundo_animation {
+    /*----- Position -----*/
+    margin-left: 10px;
+    margin-bottom: 10px;
+    /*----- Designer -----*/
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+}
+
+.botoes_stars {
+    /*----- Position -----*/
+    margin-left: 10px;
+    margin-bottom: 10px;
+    /*----- Designer -----*/
+    font-size: 20px;
+    border-radius: 20px;
     background-color: transparent;
     color: white;
 }
 
 .botoes_face {
+    /*----- Position -----*/
     margin-left: 10px;
     margin-bottom: 10px;
-
+    /*----- Designer -----*/
     font-size: 20px;
     border-radius: 20px;
+    background-color: transparent;
+    color: white;
+}
 
+.botoes_rotate {
+    /*----- Position -----*/
+    margin-left: 10px;
+    margin-bottom: 10px;
+    /*----- Designer -----*/
+    font-size: 20px;
+    border-radius: 20px;
     background-color: transparent;
     color: white;
 }
 
 #aply {
-    margin-left: 10px;
-    margin-bottom: 10px;
-
-    font-size: 30px;
-    border-radius: 20px;
-
-    background-color: transparent;
-    color: white;
+   /*----- Position -----*/
+   margin-left: 10px;
+   margin-bottom: 10px;
+   /*----- Designer -----*/
+   font-size: 20px;
+   border-radius: 20px;
+   background-color: transparent;
+   color: white;
 }

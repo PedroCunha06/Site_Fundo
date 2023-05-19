@@ -17,13 +17,25 @@
         </button>
         <div id="config">
             <div>
-                <p>Fundo</p>
+                <p>Background</p>
                 <button onclick="escolhaFundo(this.id)" id="dark1" class="botoes_fundo">Dark 1</button>
                 <button onclick="escolhaFundo(this.id)" id="dark2" class="botoes_fundo">Dark 2</button>
                 <button onclick="escolhaFundo(this.id)" id="night" class="botoes_fundo">Night</button>
                 <button onclick="escolhaFundo(this.id)" id="day1" class="botoes_fundo">Day 1</button>
                 <button onclick="escolhaFundo(this.id)" id="day2" class="botoes_fundo">Day 2</button>
                 <button onclick="escolhaFundo(this.id)" id="day3" class="botoes_fundo">Day 3</button>
+            </div>
+            <hr>
+            <div>
+                <p>Animation Fundo</p>
+                <button onclick="escolhaAnimation(this.id)" id="yes" class="botoes_fundo_animation">Yes</button>
+                <button onclick="escolhaAnimation(this.id)" id="no" class="botoes_fundo_animation">No</button>
+            </div>
+            <hr>
+            <div>
+                <p>Animation Estrelas</p>
+                <button onclick="escolhaStars(this.id)" id="yes" class="botoes_stars">Yes</button>
+                <button onclick="escolhaStars(this.id)" id="no" class="botoes_stars">No</button>
             </div>
             <hr>
             <div>
@@ -35,17 +47,25 @@
             </div>
             <hr>
             <div>
+                <p>Rotate</p>
+                <button onclick="escolhaRota(this.id)" id="rota0" class="botoes_rotate">No rotate</button>
+                <button onclick="escolhaRota(this.id)" id="rota1" class="botoes_rotate">Type 1</button>
+                <button onclick="escolhaRota(this.id)" id="rota2" class="botoes_rotate">Type 2</button>
+            </div>
+
+            <hr>
+            <div>
                 <button id="aply">Aply</button>
             </div>
         </div>
         <div id="cubo">
-            <div class="cube">
+            <div class="cube" id="cube_animation">
                 <div class="face front"></div>
                 <div class="face right"></div>
                 <div class="face left"></div>
                 <div class="face back"></div>
-                <div class="face top"></div>
-                <div class="face bottom"></div>
+                <div class="face_2 top"></div>
+                <div class="face_2 bottom"></div>
             </div>
         </div>
     </div>
