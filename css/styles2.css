@@ -1,0 +1,129 @@
+/*--------------------- CONFIGS ---------------------*/
+#botao {
+    /*----- Size -----*/
+    width: 60px;
+    height: 60px;
+    /*----- Designer -----*/
+    background: transparent; 
+    border-radius: 50%;
+}
+#img1 {
+    /*----- Size -----*/
+    width: 100%;
+    height:100%;
+}
+
+#config {
+    /*----- Size -----*/
+    width: 580px;
+    height: auto;
+    /*----- Position -----*/
+    margin-top: 10px;
+    padding: 0;
+    display: none;
+    /*----- Designer -----*/
+    background-color: rgb(0, 0, 0);
+    font-size: 20px;
+    border: 3px solid rgb(251, 251, 251);
+    border-radius: 10px;
+}
+
+
+#config p {
+    /*----- Position -----*/
+    margin-top: 2px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    padding: 0;
+
+    /*----- Designer -----*/
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:  white;
+}
+
+
+.botoes_fundo {
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    font-size: 20px;
+    border-radius: 20px;
+
+    background-color: transparent;
+    color: white;
+}
+
+.botoes_animado {
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    font-size: 20px;
+    border-radius: 20px;
+
+    background-color: transparent;
+    color: white;
+}
+
+#aply {
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    font-size: 30px;
+    border-radius: 20px;
+
+    background-color: transparent;
+    color: white;
+}
+
+
+
+/*------------------- TESTE ----------------*/
+/*-------------- VARIAVEIS COLORS -----------------*/
+:root {
+    /*------- BACKGROUND SIMPLE -------*/
+        --black: black;
+        --blue: rgb(37, 49, 109);
+        --purple: rgb(39, 0, 130);
+    
+    /*------- BACKGROUND GRADIENT --------*/
+        --dark1: rgb(3, 0, 28) 40%, rgb(48, 30, 103), rgb(91, 143, 185), rgb(182, 234, 218);
+        --dark2: rgb(26, 26, 64) 40%, rgb(33, 0, 110), rgb(122, 11, 192), rgba(138, 0, 80, 0.914);
+        --night: rgb(0, 0, 0) 40%, rgb(40, 42, 58), rgb(115, 95, 50), rgb(198, 151, 73);
+        --day1: rgb(22, 36, 106) 40%, rgb(95, 111, 148), rgb(53, 138, 175), rgb(252, 225, 23);
+        --day2: rgb(6, 40, 61) 40%,  rgb(15, 72, 157), rgb(40, 101, 142), rgb(122, 137, 143);
+        --day3: rgb(3, 4, 94) 40%, rgb(0, 58, 151), rgb(57, 150, 166), rgba(202, 240, 248, 0.486);
+    
+    /*------- FACES --------*/
+        --darkblue: black 50%, blue;
+        --darkred: black 50%, red;
+        --darkyellow: black 50%, rgb(193, 190, 0);
+        --darkpink: black 50%, rgb(99, 3, 188);
+    }
+
+.color {
+    /*----- Size -----*/
+    width: 300vh;
+    height: 100vh;
+    /*----- Position -----*/
+    margin: 0;
+    /*----- Designer -----*/
+    background: linear-gradient(45deg, var(--night));
+    background-size: 300% 300%;
+    /*----- Animation -----*/
+    animation: colors 10s ease infinite;
+}
+
+@keyframes colors {
+    from {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    to {
+        background-position: 0% 50%;
+    }
+
+}
