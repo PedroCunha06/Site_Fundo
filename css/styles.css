@@ -13,13 +13,12 @@
     --day2: rgb(6, 40, 61) 40%,  rgb(15, 72, 157), rgb(40, 101, 142), rgb(122, 137, 143);
     --day3: rgb(3, 4, 94) 40%, rgb(0, 58, 151), rgb(57, 150, 166), rgba(202, 240, 248, 0.486);
 
-/*------- FACES --------*/
-    --darkblue: black 50%, blue;
-    --darkred: black 50%, red;
-    --darkyellow: black 50%, rgb(193, 190, 0);
-    --darkpink: black 50%, rgb(99, 3, 188);
 }
 
+@font-face {
+    font-family: Cubic;
+    src: url(../image/cubic.ttf);
+}
 
 /*------------------ Gradiente --------------------*/
 body {
@@ -185,7 +184,7 @@ body {
     align-items: center;
     /*----- Designer -----*/
     border: 2px solid rgb(255, 255, 255);
-    background: linear-gradient(-180deg, var(--darkblue));
+    background: linear-gradient(-180deg, black 50%, #11009E);
     background-size: 175% 175%;
     opacity: 1;
     animation: 
@@ -311,10 +310,11 @@ body {
 /*--------------------- CONFIGS ---------------------*/
 #botao {
     /*----- Size -----*/
-    width: 60px;
+    width: 70px;
     height: 60px;
     /*----- Designer -----*/
     background: transparent; 
+    border: none;
     border-radius: 50%;
 }
 #img1 {
@@ -325,17 +325,15 @@ body {
 
 #config {
     /*----- Size -----*/
-    width: 580px;
+    width: 200px;
     height: auto;
     /*----- Position -----*/
-    margin-top: 10px;
     padding: 0;
     display: none;
+    position: absolute;
     /*----- Designer -----*/
     background-color: rgb(0, 0, 0);
     font-size: 20px;
-    border: 3px solid rgb(251, 251, 251);
-    border-radius: 10px;
     /*----- Animation -----*/
     transition: all 2s;
 }
@@ -347,9 +345,16 @@ body {
     margin-left: 5px;
     margin-bottom: 10px;
     padding: 0;
+    text-align: center;
 
     /*----- Designer -----*/
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Cubic;
+    color:  white;
+}
+
+#config button {
+    /*----- Designer -----*/
+    font-family: 'Times New Roman', Times, serif;
     color:  white;
 }
 
@@ -364,7 +369,7 @@ body {
     color: white;
 }
 
-.botoes_fundo_animation {
+.color_face {
     /*----- Position -----*/
     margin-left: 10px;
     margin-bottom: 10px;
@@ -386,16 +391,6 @@ body {
     color: white;
 }
 
-.botoes_face {
-    /*----- Position -----*/
-    margin-left: 10px;
-    margin-bottom: 10px;
-    /*----- Designer -----*/
-    font-size: 20px;
-    border-radius: 20px;
-    background-color: transparent;
-    color: white;
-}
 
 .botoes_rotate {
     /*----- Position -----*/
@@ -409,12 +404,12 @@ body {
 }
 
 #aply {
-   /*----- Position -----*/
-   margin-left: 10px;
-   margin-bottom: 10px;
-   /*----- Designer -----*/
-   font-size: 20px;
-   border-radius: 20px;
-   background-color: transparent;
-   color: white;
+    /*----- Position -----*/
+    margin-left: 10px;
+    margin-bottom: 10px;
+    /*----- Designer -----*/
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
 }

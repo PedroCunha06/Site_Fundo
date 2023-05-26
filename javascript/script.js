@@ -6,6 +6,7 @@ let escolha_fundo;
 let escolha_cor;
 let escolha_rotate;
 let escolha_stars;
+let escolha_face;
 let aplicar = document.querySelector('#aply');
 /* 
 Eventos
@@ -14,6 +15,7 @@ botao.addEventListener("click", function () {
     let div = document.querySelector('#config');
     if (div.style.display === "none") {
         div.style.display = "block";
+        div.style.position = "absolute"
     }
     else {
         div.style.display = "none";
@@ -26,7 +28,6 @@ function settings() {
     let color = document.querySelector('.color');
     let face = document.querySelectorAll('.face');
     let cube = document.querySelector('#cube_animation');
-    let stars = document.querySelector('.stars');
 
     switch (escolha_fundo) {
         case "dark1": {
@@ -72,6 +73,10 @@ function settings() {
         }
     }
 
+    face.forEach(function(face) {
+        face.style.background = escolha_face;
+    });
+
     div.style.display = "none";
 }
 
@@ -87,4 +92,8 @@ function escolhaRota(id) {
 
 function escolhaStars(id) {
     escolha_stars = id;
+}
+
+function escolhaCor(value) {
+    escolha_face = "linear-gradient(180deg, black 50%, " + value + ")"
 }
