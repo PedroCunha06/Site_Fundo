@@ -169,7 +169,6 @@ body {
     margin-left: 38%;
     /*----- 3D -----*/
     transform-style: preserve-3d;
-    transform: rotateY(45deg)  rotateX(-20deg);
 }
 
 #cube_animation {
@@ -249,11 +248,11 @@ body {
 
 @keyframes rotate2 {
     from {
-        transform: rotateY(0deg) rotateX(-5deg);
+        transform: rotateY(0deg) rotateX(5deg);
     }
 
     to {
-        transform: rotateY(360deg) rotateX(-5deg);
+        transform: rotateY(360deg) rotateX(5deg);
     }
 }
 

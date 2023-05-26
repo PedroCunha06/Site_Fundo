@@ -5,7 +5,6 @@ let botao = document.querySelector('#botao');
 let escolha_fundo;
 let escolha_cor;
 let escolha_rotate;
-let escolha_animation_fundo;
 let escolha_stars;
 let aplicar = document.querySelector('#aply');
 /* 
@@ -62,64 +61,7 @@ function settings() {
         }
     }
 
-    switch (escolha_stars) {
-        case "yes": {
-            stars.style.display = "block";
-            break;
-        }
-        case "no": {
-            stars.style.display = "none";
-            break;
-        }
-    }
-
-    switch (escolha_animation_fundo) {
-        case "yes": {
-            color.style.animation = "colors 15s ease infinite";
-            break;
-        }
-        case "no": {
-            color.style.animation = "none";
-            break;
-        }
-    }
-
-    switch (escolha_cor) {
-        case "blue": {
-            for (let i = 0; i < face.length; i++) {
-                face[i].style.background = "linear-gradient(-180deg, var(--darkblue))";
-                face[i].style.backgroundSize = "175% 175%";
-            }
-            break;
-        }
-        case "red": {
-            for (let i = 0; i < face.length; i++) {
-                face[i].style.background = "linear-gradient(-180deg, var(--darkred))";
-                face[i].style.backgroundSize = "175% 175%";
-            }
-            break;
-        }
-        case "yellow": {
-            for (let i = 0; i < face.length; i++) {
-                face[i].style.background = "linear-gradient(-180deg, var(--darkyellow))";
-                face[i].style.backgroundSize = "175% 175%";
-            }
-            break;
-        }
-        case "pink": {
-            for (let i = 0; i < face.length; i++) {
-                face[i].style.background = "linear-gradient(-180deg, var(--darkpink))";
-                face[i].style.backgroundSize = "175% 175%";
-            }
-            break;
-        }
-    }
-
     switch (escolha_rotate) {
-        case "rota0": {
-            cube.style.animation = "none";
-            break;
-        }
         case "rota1": {
             cube.style.animation = "rotate1 10s linear infinite"
             break;
@@ -138,17 +80,10 @@ function escolhaFundo(id) {
 
 }
 
-function escolhaCor(id) {
-    escolha_cor = id;
-}
-
 function escolhaRota(id) {
     escolha_rotate = id;
 }
 
-function escolhaAnimation(id) {
-    escolha_animation_fundo = id;
-}
 
 function escolhaStars(id) {
     escolha_stars = id;
