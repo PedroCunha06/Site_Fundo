@@ -36,6 +36,7 @@ aplicar.addEventListener('click', settings);
 
 function settings() {
     let div = document.querySelector('#config');
+    let opcoes = document.querySelector('#button');
     let color = document.querySelector('.color');
     let face = document.querySelectorAll('.face');
     let bottom = document.querySelector('.bottom');
@@ -43,11 +44,16 @@ function settings() {
     let cube = document.querySelector
         ('#cube_animation');
 
-    defineCor(alto, baixo)
+    defineCor();
 
     switch (escolha_fundo) {
         case "space": {
             color.style.background = "var(--space)";
+            color.style.backgroundSize = "300% 300%";
+            break;
+        }
+        case "sky": {
+            color.style.background = "var(--sky)";
             color.style.backgroundSize = "300% 300%";
             break;
         }
@@ -78,7 +84,6 @@ function settings() {
     opcoes.style.background = "transparent";
     opcoes.style.border = "none";
     botao.style.border = "2px solid white";
-    console.log(escolha_border);
 
 }
 
@@ -91,18 +96,14 @@ function escolhaRota(id) {
     escolha_rotate = id;
 }
 
-function escolhaCor1(value) {
-    baixo = value;
-}
-
-function escolhaCor2(value) {
-    alto = value;
-}
-
 function escolhaCor3(value) {
     escolha_border = value;
 }
 
-function defineCor(value1, value2) {
-    escolha_face = "linear-gradient(-180deg, " + value1 + " 30%, " + value2 + " 80%)"
+function defineCor() {
+    let y = document.querySelector('#cor1');
+    let x = document.querySelector('#cor2');
+    baixo = y.value;
+    alto = x.value;
+    escolha_face = "linear-gradient(-180deg, " + alto + " 30%, " + baixo + " 80%)"
 }

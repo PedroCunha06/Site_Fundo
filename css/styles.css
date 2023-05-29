@@ -2,6 +2,7 @@
 :root {
     /*------- BACKGROUND GRADIENT --------*/
     --space: linear-gradient(65deg, #07060d, #050037, #000074);
+    --sky: linear-gradient(65deg, #00395d,#002c6e, #363795);
 }
 
 @font-face {
@@ -174,6 +175,7 @@ body {
     /*----- Designer -----*/
     border: 2px solid rgb(255, 255, 255);
     background: linear-gradient(-180deg, black 30%, #11009E 80%);
+    background-image: url(../image/);
     background-size: 125% 125%;
     opacity: 1;
     animation:
