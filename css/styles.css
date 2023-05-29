@@ -1,18 +1,7 @@
 /*-------------- VARIAVEIS COLORS -----------------*/
 :root {
-/*------- BACKGROUND SIMPLE -------*/
-    --black: black;
-    --blue: rgb(37, 49, 109);
-    --purple: rgb(39, 0, 130);
-
-/*------- BACKGROUND GRADIENT --------*/
-    --dark1: rgb(3, 0, 28) 40%, rgb(48, 30, 103), rgb(91, 143, 185), rgb(182, 234, 218);
-    --dark2: rgb(26, 26, 64) 40%, rgb(33, 0, 110), rgb(122, 11, 192), rgba(138, 0, 80, 0.914);
-    --night: rgb(0, 0, 0) 40%, rgb(40, 42, 58), rgb(115, 95, 50), rgb(198, 151, 73);
-    --day1: rgb(22, 36, 106) 40%, rgb(95, 111, 148), rgb(53, 138, 175), rgb(252, 225, 23);
-    --day2: rgb(6, 40, 61) 40%,  rgb(15, 72, 157), rgb(40, 101, 142), rgb(122, 137, 143);
-    --day3: rgb(3, 4, 94) 40%, rgb(0, 58, 151), rgb(57, 150, 166), rgba(202, 240, 248, 0.486);
-
+    /*------- BACKGROUND GRADIENT --------*/
+    --space: linear-gradient(65deg, #07060d, #050037, #000074);
 }
 
 @font-face {
@@ -38,7 +27,7 @@ body {
     /*----- Position -----*/
     margin: 0;
     /*----- Designer -----*/
-    background: linear-gradient(45deg, var(--dark1));
+    background: var(--space);
     background-size: 300% 300%;
     /*----- Animation -----*/
     animation: colors 15s ease infinite;
@@ -171,7 +160,7 @@ body {
 }
 
 #cube_animation {
-    animation: rotate2 10s linear infinite;
+    animation: rotate1 10s linear infinite;
 }
 
 .face {
@@ -184,11 +173,11 @@ body {
     align-items: center;
     /*----- Designer -----*/
     border: 2px solid rgb(255, 255, 255);
-    background: linear-gradient(-180deg, black 50%, #11009E);
-    background-size: 175% 175%;
+    background: linear-gradient(-180deg, black 30%, #11009E 80%);
+    background-size: 125% 125%;
     opacity: 1;
-    animation: 
-    face 10s linear infinite;
+    animation:
+        face 10s linear infinite;
 }
 
 .face_2 {
@@ -222,12 +211,13 @@ body {
 
 .top {
     transform: rotateX(90deg) translateZ(150px);
-    background: black;
+    background-color: black;
 }
 
 .bottom {
     transform: rotateX(-90deg) translateZ(150px);
-    background: black;
+    background-color: #11009E;
+
 }
 
 
@@ -235,7 +225,7 @@ body {
 
 @keyframes rotate1 {
     from {
-        
+
         transform: rotateX(0deg) rotateY(0deg);
     }
 
@@ -261,7 +251,7 @@ body {
     }
 
     50% {
-        background-position: 150% 100%;
+        background-position: 100% 100%;
     }
 
     to {
@@ -313,14 +303,15 @@ body {
     width: 70px;
     height: 60px;
     /*----- Designer -----*/
-    background: transparent; 
+    background: transparent;
     border: none;
     border-radius: 50%;
 }
+
 #img1 {
     /*----- Size -----*/
     width: 100%;
-    height:100%;
+    height: 100%;
 }
 
 #config {
@@ -331,6 +322,7 @@ body {
     padding: 0;
     display: none;
     position: absolute;
+    z-index: 1;
     /*----- Designer -----*/
     background-color: rgb(0, 0, 0);
     font-size: 20px;
@@ -349,13 +341,13 @@ body {
 
     /*----- Designer -----*/
     font-family: Cubic;
-    color:  white;
+    color: white;
 }
 
 #config button {
     /*----- Designer -----*/
     font-family: 'Times New Roman', Times, serif;
-    color:  white;
+    color: white;
 }
 
 .botoes_fundo {
@@ -369,7 +361,18 @@ body {
     color: white;
 }
 
-.color_face {
+.color_face1 {
+    /*----- Position -----*/
+    margin-left: 10px;
+    margin-bottom: 10px;
+    /*----- Designer -----*/
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+}
+
+.color_face2 {
     /*----- Position -----*/
     margin-left: 10px;
     margin-bottom: 10px;

@@ -18,39 +18,27 @@
         <div id="config">
             <div>
                 <p>Background</p>
-                <button onclick="escolhaFundo(this.id)" id="dark1" class="botoes_fundo">Dark 1</button>
-                <button onclick="escolhaFundo(this.id)" id="dark2" class="botoes_fundo">Dark 2</button>
-                <button onclick="escolhaFundo(this.id)" id="night" class="botoes_fundo">Night</button>
-                <button onclick="escolhaFundo(this.id)" id="day1" class="botoes_fundo">Day 1</button>
-                <button onclick="escolhaFundo(this.id)" id="day2" class="botoes_fundo">Day 2</button>
-                <button onclick="escolhaFundo(this.id)" id="day3" class="botoes_fundo">Day 3</button>
-            </div>
-            <hr>
-            <div>
-                <p>Animation Estrelas</p>
-                <button onclick="escolhaStars(this.id)" id="yes" class="botoes_stars">Yes</button>
-                <button onclick="escolhaStars(this.id)" id="no" class="botoes_stars">No</button>
+                <button onclick="escolhaFundo(this.id)" id="space" class="botoes_fundo">Space</button>
             </div>
             <hr>
             <div>
                 <p>Face</p>
                 <center>
-                    <input type="color" class="color_face" 
-                value="#11009E" onchange="escolhaCor(this.value)">
-                </center>
+                    <input type="color" class="color_face1" value="#11009E" onchange="escolhaCor1(this.value)">
+                    <input type="color" class="color_face2" value="#000000" onchange="escolhaCor2(this.value)" </center>
             </div>
             <hr>
             <div>
                 <p>Rotate</p>
                 <button onclick="escolhaRota(this.id)" id="rota1" class="botoes_rotate">Type 1</button>
                 <button onclick="escolhaRota(this.id)" id="rota2" class="botoes_rotate">Type 2</button>
-          </div>
-          <div>
-            <hr>
+            </div>
+            <div>
+                <hr>
                 <p>Aply</p>
                 <center>
                     <button id="aply"> Aply </button>
-                </center> 
+                </center>
             </div>
         </div>
         <div id="cubo">
