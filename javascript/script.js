@@ -3,10 +3,10 @@ Declaração de Variáveis
 */
 let botao = document.querySelector('#botao');
 let escolha_fundo;
-let escolha_cor;
-let escolha_rotate;
-let escolha_stars;
+let baixo;
+let alto;
 let escolha_face;
+let escolha_rotate;
 let aplicar = document.querySelector('#aply');
 /* 
 Eventos
@@ -27,36 +27,16 @@ function settings() {
     let div = document.querySelector('#config');
     let color = document.querySelector('.color');
     let face = document.querySelectorAll('.face');
-    let cube = document.querySelector('#cube_animation');
+    let bottom = document.querySelector('.bottom');
+    let top = document.querySelector('.top');
+    let cube = document.querySelector
+        ('#cube_animation');
+
+    defineCor(alto, baixo)
 
     switch (escolha_fundo) {
-        case "dark1": {
-            color.style.background = "linear-gradient(45deg, var(--dark1))";
-            color.style.backgroundSize = "300% 300%";
-            break;
-        }
-        case "dark2": {
-            color.style.background = "linear-gradient(45deg, var(--dark2))";
-            color.style.backgroundSize = "300% 300%";
-            break
-        }
-        case "night": {
-            color.style.background = "linear-gradient(45deg, var(--night))";
-            color.style.backgroundSize = "300% 300%";
-            break;
-        }
-        case "day1": {
-            color.style.background = "linear-gradient(45deg, var(--day1))";
-            color.style.backgroundSize = "300% 300%";
-            break;
-        }
-        case "day2": {
-            color.style.background = "linear-gradient(45deg, var(--day2))";
-            color.style.backgroundSize = "300% 300%";
-            break;
-        }
-        case "day3": {
-            color.style.background = "linear-gradient(45deg, var(--day3))";
+        case "space": {
+            color.style.background = "linear-gradient(45deg, var(--space))";
             color.style.backgroundSize = "300% 300%";
             break;
         }
@@ -73,10 +53,13 @@ function settings() {
         }
     }
 
-    face.forEach(function(face) {
+    face.forEach(function (face) {
         face.style.background = escolha_face;
+        face.style.backgroundSize = "125% 125%";
     });
 
+    bottom.style.background = baixo;
+    top.style.background = alto;
     div.style.display = "none";
 }
 
@@ -89,11 +72,14 @@ function escolhaRota(id) {
     escolha_rotate = id;
 }
 
-
-function escolhaStars(id) {
-    escolha_stars = id;
+function escolhaCor1(value) {
+    baixo = value;
 }
 
-function escolhaCor(value) {
-    escolha_face = "linear-gradient(180deg, black 50%, " + value + ")"
+function escolhaCor2(value) {
+    alto = value;
+}
+
+function defineCor(value1, value2) {
+    escolha_face = "linear-gradient(-180deg, " + value1 + " 30%, " + value2 + " 80%)"
 }
