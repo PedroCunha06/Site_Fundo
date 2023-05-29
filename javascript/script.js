@@ -2,27 +2,38 @@
 Declaração de Variáveis
 */
 let botao = document.querySelector('#botao');
+let aplicar = document.querySelector('#aply');
 let escolha_fundo;
 let baixo;
 let alto;
 let escolha_face;
 let escolha_rotate;
-let aplicar = document.querySelector('#aply');
+let escolha_border;
+
 /* 
 Eventos
 */
 botao.addEventListener("click", function () {
     let div = document.querySelector('#config');
+    let opcoes = document.querySelector('#button');
+    let botao = document.querySelector('#botao');
     if (div.style.display === "none") {
+        opcoes.style.background = "white";
+        opcoes.style.border = "2px solid black";
         div.style.display = "block";
-        div.style.position = "absolute"
+        div.style.position = "absolute";
+        botao.style.border = "2px solid black";
     }
     else {
         div.style.display = "none";
+        opcoes.style.background = "transparent";
+        opcoes.style.border = "none";
+        botao.style.border = "2px solid white";
     }
 });
 
 aplicar.addEventListener('click', settings);
+
 function settings() {
     let div = document.querySelector('#config');
     let color = document.querySelector('.color');
@@ -36,7 +47,7 @@ function settings() {
 
     switch (escolha_fundo) {
         case "space": {
-            color.style.background = "linear-gradient(45deg, var(--space))";
+            color.style.background = "var(--space)";
             color.style.backgroundSize = "300% 300%";
             break;
         }
@@ -55,12 +66,20 @@ function settings() {
 
     face.forEach(function (face) {
         face.style.background = escolha_face;
+        face.style.borderColor = escolha_border;
         face.style.backgroundSize = "125% 125%";
     });
 
     bottom.style.background = baixo;
     top.style.background = alto;
+    bottom.style.borderColor = escolha_border;
+    top.style.borderColor = escolha_border;
     div.style.display = "none";
+    opcoes.style.background = "transparent";
+    opcoes.style.border = "none";
+    botao.style.border = "2px solid white";
+    console.log(escolha_border);
+
 }
 
 function escolhaFundo(id) {
@@ -78,6 +97,10 @@ function escolhaCor1(value) {
 
 function escolhaCor2(value) {
     alto = value;
+}
+
+function escolhaCor3(value) {
+    escolha_border = value;
 }
 
 function defineCor(value1, value2) {

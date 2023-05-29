@@ -259,52 +259,25 @@ body {
     }
 }
 
-@keyframes border {
-    from {
-        border-color: white;
-    }
-
-    14% {
-        border-color: red;
-    }
-
-    28% {
-        border-color: orange;
-    }
-
-    42% {
-        border-color: yellow;
-    }
-
-    56% {
-        border-color: green;
-    }
-
-    70% {
-        border-color: blue;
-    }
-
-    84% {
-        border-color: indigo;
-    }
-
-    98% {
-        border-color: purple;
-    }
-
-    to {
-        border-color: white;
-    }
+/*--------------------- CONFIGS ---------------------*/
+#button {
+    /*----- Size -----*/
+    width: 100%;
+    /*----- Position -----*/
+    margin-top: -5px;
+    position: relative;
+    /*----- Designer -----*/
+    border: none;
+    background-color: transparent;
 }
 
-/*--------------------- CONFIGS ---------------------*/
 #botao {
     /*----- Size -----*/
     width: 70px;
     height: 60px;
     /*----- Designer -----*/
     background: transparent;
-    border: none;
+    border: 2px solid white;
     border-radius: 50%;
 }
 
@@ -317,15 +290,16 @@ body {
 #config {
     /*----- Size -----*/
     width: 200px;
-    height: auto;
+    height: 90%;
     /*----- Position -----*/
-    padding: 0;
+    padding: 10px;
     display: none;
     position: absolute;
     z-index: 1;
     /*----- Designer -----*/
-    background-color: rgb(0, 0, 0);
+    background-color: white;
     font-size: 20px;
+    border: 2px solid black;
     /*----- Animation -----*/
     transition: all 2s;
 }
@@ -341,16 +315,23 @@ body {
 
     /*----- Designer -----*/
     font-family: Cubic;
-    color: white;
+    color: black;
 }
 
 #config button {
+    /*----- Position -----*/
+    margin-left: 10px;
+    margin-bottom: 10px;
     /*----- Designer -----*/
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
     font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: black;
 }
 
-.botoes_fundo {
+#config input {
     /*----- Position -----*/
     margin-left: 10px;
     margin-bottom: 10px;
@@ -358,61 +339,5 @@ body {
     font-size: 20px;
     border-radius: 20px;
     background-color: transparent;
-    color: white;
-}
-
-.color_face1 {
-    /*----- Position -----*/
-    margin-left: 10px;
-    margin-bottom: 10px;
-    /*----- Designer -----*/
-    font-size: 20px;
-    border-radius: 20px;
-    background-color: transparent;
-    color: white;
-}
-
-.color_face2 {
-    /*----- Position -----*/
-    margin-left: 10px;
-    margin-bottom: 10px;
-    /*----- Designer -----*/
-    font-size: 20px;
-    border-radius: 20px;
-    background-color: transparent;
-    color: white;
-}
-
-.botoes_stars {
-    /*----- Position -----*/
-    margin-left: 10px;
-    margin-bottom: 10px;
-    /*----- Designer -----*/
-    font-size: 20px;
-    border-radius: 20px;
-    background-color: transparent;
-    color: white;
-}
-
-
-.botoes_rotate {
-    /*----- Position -----*/
-    margin-left: 10px;
-    margin-bottom: 10px;
-    /*----- Designer -----*/
-    font-size: 20px;
-    border-radius: 20px;
-    background-color: transparent;
-    color: white;
-}
-
-#aply {
-    /*----- Position -----*/
-    margin-left: 10px;
-    margin-bottom: 10px;
-    /*----- Designer -----*/
-    font-size: 20px;
-    border-radius: 20px;
-    background-color: transparent;
-    color: white;
+    color: black;
 }

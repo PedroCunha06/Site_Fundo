@@ -13,19 +13,31 @@
 <body>
     <div class="color">
         <div class="stars"></div>
-        <button id="botao"><img id="img1" src="image/config.png" alt="">
-        </button>
+        <div id="button">
+            <button id="botao">
+                <img id="img1" src="image/config.png" alt="">
+            </button>
+        </div>
         <div id="config">
             <div>
                 <p>Background</p>
-                <button onclick="escolhaFundo(this.id)" id="space" class="botoes_fundo">Space</button>
+                <center>
+                    <button onclick="escolhaFundo(this.id)" id="space" class="botoes_fundo">Space</button>
+                </center>
             </div>
             <hr>
             <div>
                 <p>Face</p>
                 <center>
-                    <input type="color" class="color_face1" value="#11009E" onchange="escolhaCor1(this.value)">
-                    <input type="color" class="color_face2" value="#000000" onchange="escolhaCor2(this.value)" </center>
+                    <input type="color" value="#11009E" onchange="escolhaCor1(this.value)">
+                    <input type="color" value="#000000" onchange="escolhaCor2(this.value)" </center>
+            </div>
+            <hr>
+            <div>
+                <p>Border</p>
+                <center>
+                    <input type="color" value="#ffffff" onchange="escolhaCor3(this.value)">
+                </center>
             </div>
             <hr>
             <div>
