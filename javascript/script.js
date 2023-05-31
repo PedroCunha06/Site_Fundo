@@ -34,6 +34,8 @@ botao.addEventListener("click", function () {
 
 aplicar.addEventListener('click', settings);
 
+defineCor();
+
 function settings() {
     let div = document.querySelector('#config');
     let opcoes = document.querySelector('#button');
@@ -50,11 +52,26 @@ function settings() {
         case "space": {
             color.style.background = "var(--space)";
             color.style.backgroundSize = "300% 300%";
+            color.style.animation = "face 10s linear infinite";
             break;
         }
         case "sky": {
             color.style.background = "var(--sky)";
             color.style.backgroundSize = "300% 300%";
+            color.style.animation = "face 10s linear infinite";
+            break;
+        }
+        case "minecraft": {
+            face.forEach(function (face) {
+                face.style.backgroundImage = "url(../image/lado_cubo.jpg)";
+                face.style.backgroundSize = "110% 115%";
+                face.style.animation = "none";
+                face.style.border = "1px solid black"
+            });
+            top.style.backgroundImage = "url(../image/cima_cubo.png)";
+            top.style.border = "1px solid black"
+            bottom.style.backgroundImage = "url(../image/baixo_cubo.png)";
+            bottom.style.border = "1px solid black"
             break;
         }
     }
@@ -70,11 +87,17 @@ function settings() {
         }
     }
 
-    face.forEach(function (face) {
-        face.style.background = escolha_face;
-        face.style.borderColor = escolha_border;
-        face.style.backgroundSize = "125% 125%";
-    });
+    if (escolha_fundo === "minecraft") {
+        return;
+    }
+    else {
+        face.forEach(function (face) {
+            face.style.background = escolha_face;
+            face.style.borderColor = escolha_border;
+            face.style.backgroundSize = "125% 125%";
+        });
+    }
+
 
     bottom.style.background = baixo;
     top.style.background = alto;
@@ -85,6 +108,7 @@ function settings() {
     opcoes.style.border = "none";
     botao.style.border = "2px solid white";
 
+    console.log(escolha_face);
 }
 
 function escolhaFundo(id) {
@@ -107,3 +131,4 @@ function defineCor() {
     alto = x.value;
     escolha_face = "linear-gradient(-180deg, " + alto + " 30%, " + baixo + " 80%)"
 }
+

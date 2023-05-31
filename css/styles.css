@@ -175,7 +175,6 @@ body {
     /*----- Designer -----*/
     border: 2px solid rgb(255, 255, 255);
     background: linear-gradient(-180deg, black 30%, #11009E 80%);
-    background-image: url(../image/);
     background-size: 125% 125%;
     opacity: 1;
     animation:
