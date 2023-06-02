@@ -2,7 +2,7 @@
 :root {
     /*------- BACKGROUND GRADIENT --------*/
     --space: linear-gradient(65deg, #07060d, #050037, #000074);
-    --sky: linear-gradient(65deg, #00395d,#002c6e, #363795);
+    --sky: linear-gradient(65deg, #00395d, #002c6e, #363795);
 }
 
 @font-face {
@@ -31,7 +31,7 @@ body {
     background: var(--space);
     background-size: 300% 300%;
     /*----- Animation -----*/
-    animation: colors 15s ease infinite;
+    animation: colors 10s ease infinite;
 }
 
 /*----------------- ANIMATION ----------------*/

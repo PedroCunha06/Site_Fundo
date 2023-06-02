@@ -45,6 +45,7 @@ function settings() {
     let top = document.querySelector('.top');
     let cube = document.querySelector
         ('#cube_animation');
+    let stars = document.querySelector('.stars')
 
     defineCor();
 
@@ -68,10 +69,9 @@ function settings() {
                 face.style.animation = "none";
                 face.style.border = "1px solid black"
             });
-            top.style.backgroundImage = "url(../image/cima_cubo.png)";
-            top.style.border = "1px solid black"
-            bottom.style.backgroundImage = "url(../image/baixo_cubo.png)";
-            bottom.style.border = "1px solid black"
+            color.style.backgroundImage = "url(../image/fundo.jpg_large)";
+            color.style.backgroundSize = "100% 100%";
+            stars.style.display = "none";
             break;
         }
     }
@@ -88,7 +88,12 @@ function settings() {
     }
 
     if (escolha_fundo === "minecraft") {
-        return;
+        console.log("Deu minecraft");
+        top.style.backgroundImage = "url(../image/cima_cubo.png)";
+        top.style.border = "1px solid black";
+        bottom.style.backgroundImage = "url(../image/baixo_cubo.png)";
+        bottom.style.border = "1px solid black";
+        color.style.animation = "none";
     }
     else {
         face.forEach(function (face) {
@@ -96,19 +101,20 @@ function settings() {
             face.style.borderColor = escolha_border;
             face.style.backgroundSize = "125% 125%";
         });
+
+        bottom.style.background = baixo;
+        top.style.background = alto;
+        bottom.style.borderColor = escolha_border;
+        top.style.borderColor = escolha_border;
+        stars.style.display = "block";
+        color.style.animation = "colors 10s ease infinite";
     }
 
-
-    bottom.style.background = baixo;
-    top.style.background = alto;
-    bottom.style.borderColor = escolha_border;
-    top.style.borderColor = escolha_border;
     div.style.display = "none";
     opcoes.style.background = "transparent";
     opcoes.style.border = "none";
     botao.style.border = "2px solid white";
 
-    console.log(escolha_face);
 }
 
 function escolhaFundo(id) {
