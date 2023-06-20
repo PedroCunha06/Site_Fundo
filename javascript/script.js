@@ -1,140 +1,136 @@
 /* 
 Declaração de Variáveis
 */
-let botao = document.querySelector('#botao');
-let aplicar = document.querySelector('#aply');
+let botao = document.querySelector("#botao");
+let aplicar = document.querySelector("#aply");
 let escolha_fundo;
 let baixo;
 let alto;
 let escolha_face;
 let escolha_rotate;
 let escolha_border;
+let escolha_cor_fundo;
 
 /* 
 Eventos
 */
 botao.addEventListener("click", function () {
-    let div = document.querySelector('#config');
-    let opcoes = document.querySelector('#button');
-    let botao = document.querySelector('#botao');
-    if (div.style.display === "none") {
-        opcoes.style.background = "white";
-        opcoes.style.border = "2px solid black";
-        div.style.display = "block";
-        div.style.position = "absolute";
-        botao.style.border = "2px solid black";
-    }
-    else {
-        div.style.display = "none";
-        opcoes.style.background = "transparent";
-        opcoes.style.border = "none";
-        botao.style.border = "2px solid white";
-    }
+  let div = document.querySelector("#config");
+  let botao = document.querySelector("#botao");
+  if (div.style.display === "none") {
+    div.style.display = "block";
+    div.style.position = "absolute";
+    botao.style.border = "2px solid black";
+  } else {
+    div.style.display = "none";
+    botao.style.border = "2px solid white";
+  }
 });
 
-aplicar.addEventListener('click', settings);
-
-defineCor();
+aplicar.addEventListener("click", settings);
 
 function settings() {
-    let div = document.querySelector('#config');
-    let opcoes = document.querySelector('#button');
-    let color = document.querySelector('.color');
-    let face = document.querySelectorAll('.face');
-    let bottom = document.querySelector('.bottom');
-    let top = document.querySelector('.top');
-    let cube = document.querySelector
-        ('#cube_animation');
-    let stars = document.querySelector('.stars')
+  let div = document.querySelector("#config");
+  let opcoes = document.querySelector("#button");
+  let color = document.querySelector(".color");
+  let face = document.querySelectorAll(".face");
+  let bottom = document.querySelector(".bottom");
+  let top = document.querySelector(".top");
+  let cube = document.querySelector("#cube_animation");
+  let shadow = document.querySelector('.shadow')
 
-    defineCor();
+  defineCor();
 
-    switch (escolha_fundo) {
-        case "space": {
-            color.style.background = "var(--space)";
-            color.style.backgroundSize = "300% 300%";
-            color.style.animation = "face 10s linear infinite";
-            break;
-        }
-        case "sky": {
-            color.style.background = "var(--sky)";
-            color.style.backgroundSize = "300% 300%";
-            color.style.animation = "face 10s linear infinite";
-            break;
-        }
-        case "minecraft": {
-            face.forEach(function (face) {
-                face.style.backgroundImage = "url(../image/lado_cubo.jpg)";
-                face.style.backgroundSize = "110% 115%";
-                face.style.animation = "none";
-                face.style.border = "1px solid black"
-            });
-            color.style.backgroundImage = "url(../image/fundo.jpg_large)";
-            color.style.backgroundSize = "100% 100%";
-            stars.style.display = "none";
-            break;
-        }
+  switch (escolha_fundo) {
+    case "you": {
+      color.style.background = escolha_cor_fundo;
+      color.style.backgroundSize = "300% 300%";
+      console.log(escolha_cor_fundo);
+      break;
     }
 
-    switch (escolha_rotate) {
-        case "rota1": {
-            cube.style.animation = "rotate1 10s linear infinite"
-            break;
-        }
-        case "rota2": {
-            cube.style.animation = "rotate2 10s linear infinite"
-            break;
-        }
+    case "minecraft": {
+      face.forEach(function (face) {
+        face.style.backgroundImage = "url(../image/lado_cubo.jpg)";
+        face.style.backgroundSize = "110% 115%";
+        face.style.animation = "none";
+        face.style.border = "1px solid black";
+      });
+      color.style.backgroundImage = "url(../image/fundo.jpg_large)";
+      color.style.backgroundSize = "100% 100%";
+      break;
     }
+  }
 
-    if (escolha_fundo === "minecraft") {
-        console.log("Deu minecraft");
-        top.style.backgroundImage = "url(../image/cima_cubo.png)";
-        top.style.border = "1px solid black";
-        bottom.style.backgroundImage = "url(../image/baixo_cubo.png)";
-        bottom.style.border = "1px solid black";
-        color.style.animation = "none";
+  switch (escolha_rotate) {
+    case "rota1": {
+      shadow.style.display = "none";
+      cube.style.animation = "rotate1 10s linear infinite";
+      break;
     }
-    else {
-        face.forEach(function (face) {
-            face.style.background = escolha_face;
-            face.style.borderColor = escolha_border;
-            face.style.backgroundSize = "125% 125%";
-        });
-
-        bottom.style.background = baixo;
-        top.style.background = alto;
-        bottom.style.borderColor = escolha_border;
-        top.style.borderColor = escolha_border;
-        stars.style.display = "block";
-        color.style.animation = "colors 10s ease infinite";
+    case "rota2": {
+      shadow.style.display = "flex"
+      cube.style.animation = "rotate2 10s linear infinite";
+      break;
     }
+  }
 
-    div.style.display = "none";
-    opcoes.style.background = "transparent";
-    opcoes.style.border = "none";
-    botao.style.border = "2px solid white";
+  if (escolha_fundo === "minecraft") {
+    console.log("Deu minecraft");
+    top.style.backgroundImage = "url(../image/cima_cubo.png)";
+    top.style.border = "1px solid black";
+    bottom.style.backgroundImage = "url(../image/baixo_cubo.png)";
+    bottom.style.border = "1px solid black";
+    color.style.animation = "none";
+    shadow.style.display = "none";
+  } else {
+    face.forEach(function (face) {
+      face.style.background = escolha_face;
+      face.style.border = "2px solid " + escolha_border;
+      face.style.backgroundSize = "125% 125%";
+    });
 
+    bottom.style.background = baixo;
+    top.style.background = alto;
+    bottom.style.border = "2px solid " + escolha_border;
+    top.style.border = "2px solid " + escolha_border;
+    color.style.animation = "colors 10s ease infinite";
+  }
+
+  div.style.display = "none";
+  opcoes.style.background = "transparent";
+  opcoes.style.border = "none";
+  botao.style.border = "2px solid white";
+  shadow.style.backgroundColor = baixo;
+  shadow.style.boxShadow = "0px 20px 200px 150px " + baixo;
 }
 
 function escolhaFundo(id) {
-    escolha_fundo = id;
-
+  escolha_fundo = id;
 }
 
 function escolhaRota(id) {
-    escolha_rotate = id;
+  escolha_rotate = id;
 }
 
 function escolhaCor3(value) {
-    escolha_border = value;
+  escolha_border = value;
 }
 
 function defineCor() {
-    let y = document.querySelector('#cor1');
-    let x = document.querySelector('#cor2');
-    baixo = y.value;
-    alto = x.value;
-    escolha_face = "linear-gradient(-180deg, " + alto + " 30%, " + baixo + " 80%)"
+  let y = document.querySelector("#cor1");
+  let x = document.querySelector("#cor2");
+  baixo = y.value;
+  alto = x.value;
+  escolha_face =
+    "linear-gradient(-180deg, " + alto + " 30%, " + baixo + " 80%)";
 }
 
+function defineBack() {
+  let y = document.querySelector("#back1");
+  let x = document.querySelector("#back2");
+  let z = document.querySelector("#back3");
+  escolha_cor_fundo =
+    "linear-gradient(90deg, " + y.value + ", " + x.value + ", " + z.value + ")";
+  escolha_fundo = "you";
+}

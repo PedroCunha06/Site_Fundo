@@ -1,80 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Screen Magic</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
     <script defer src="javascript/script.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="color">
-        <div class="stars"></div>
-        <div id="button">
-            <button id="botao">
-                <img id="img1" src="image/config.png" alt="">
-            </button>
-        </div>
-        <div id="config">
-            <div>
-                <p>Background</p>
-                <center>
-                    <button onclick="escolhaFundo(this.id)" id="space">
-                        Space
-                    </button>
-                    <button onclick="escolhaFundo(this.id)" id="sky">
-                        Sky
-                    </button>
-                    <button onclick="escolhaFundo(this.id)" id="minecraft">Minecraft</button>
-                </center>
-            </div>
-            <hr>
-            <div>
-                <p>Face</p>
-                <center>
-                    <input type="color" value="#11009E" id="cor2">
-                    <input type="color" value="#000000" id="cor1">
-                </center>
-            </div>
-            <hr>
-            <div>
-                <p>Border</p>
-                <center>
-                    <input type="color" value="#ffffff" onchange="escolhaCor3(this.value)">
-                </center>
-            </div>
-            <hr>
-            <div>
-                <p>Rotate</p>
-                <button onclick="escolhaRota(this.id)" id="rota1">
-                    Type 1
-                </button>
-                <button onclick="escolhaRota(this.id)" id="rota2">
-                    Type 2
-                </button>
-            </div>
-            <div>
-                <hr>
-                <p>Aply</p>
-                <center>
-                    <button id="aply"> Aply </button>
-                </center>
-            </div>
-        </div>
-        <div id="cubo">
-            <div class="cube" id="cube_animation">
-                <div class="face front"></div>
-                <div class="face right"></div>
-                <div class="face left"></div>
-                <div class="face back"></div>
-                <div class="face_2 top"></div>
-                <div class="face_2 bottom"></div>
-            </div>
-        </div>
-    </div>
-</body>
+      <div id="button">
+        <button id="botao">
+          <img id="img1" src="image/config.png" alt="" />
+        </button>
+      </div>
+      <div id="config">
+        <div>
+          <p>Background</p>
 
+          <div>
+            <input
+              type="color"
+              value="#07060d"
+              onchange="defineBack()"
+              id="back1"
+            />
+            <input
+              type="color"
+              value="#050037"
+              onchange="defineBack()"
+              id="back2"
+            />
+            <input
+              type="color"
+              value="#000074"
+              onchange="defineBack()"
+              id="back3"
+            />
+          </div>
+          <hr style="border: 1px solid gray" />
+          <button onclick="escolhaFundo(this.id)" id="minecraft">
+            Minecraft
+          </button>
+        </div>
+        <hr />
+        <div>
+          <p>Face</p>
+
+          <input type="color" value="#0b006d" id="cor2" />
+          <input type="color" value="#000000" id="cor1" />
+        </div>
+        <hr />
+        <div>
+          <p>Border</p>
+
+          <input
+            type="color"
+            value="#ffffff"
+            onchange="escolhaCor3(this.value)"
+          />
+        </div>
+        <hr />
+        <div>
+          <p>Rotate</p>
+          <button onclick="escolhaRota(this.id)" id="rota1">Type 1</button>
+          <button onclick="escolhaRota(this.id)" id="rota2">Type 2</button>
+        </div>
+        <div>
+          <hr />
+          <button id="aply">Aply</button>
+        </div>
+      </div>
+      <div id="cubo">
+        <div class="cube" id="cube_animation">
+          <div class="face front"></div>
+          <div class="face right"></div>
+          <div class="face left"></div>
+          <div class="face back"></div>
+          <div class="face_2 top"></div>
+          <div class="face_2 bottom"></div>
+          <div class="face_2 shadow"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

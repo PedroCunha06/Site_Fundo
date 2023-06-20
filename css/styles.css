@@ -1,344 +1,265 @@
-/*-------------- VARIAVEIS COLORS -----------------*/
-:root {
-    /*------- BACKGROUND GRADIENT --------*/
-    --space: linear-gradient(65deg, #07060d, #050037, #000074);
-    --sky: linear-gradient(65deg, #00395d, #002c6e, #363795);
-}
-
 @font-face {
-    font-family: Cubic;
-    src: url(../image/cubic.ttf);
+  font-family: Cubic;
+  src: url(../image/cubic.ttf);
 }
 
 /*------------------ Gradiente --------------------*/
 body {
-    /*----- Size -----*/
-    width: 100%;
-    height: 100%;
-    /*----- Position -----*/
-    display: flex;
-    justify-content: center;
-    margin: 0;
+  /*----- Size -----*/
+  width: 100%;
+  height: 1000px;
+  /*----- Position -----*/
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .color {
-    /*----- Size -----*/
-    width: 300vh;
-    height: 100vh;
-    /*----- Position -----*/
-    margin: 0;
-    /*----- Designer -----*/
-    background: var(--space);
-    background-size: 300% 300%;
-    /*----- Animation -----*/
-    animation: colors 10s ease infinite;
+  /*----- Size -----*/
+  width: 300vh;
+  height: 100vh;
+  /*----- Position -----*/
+  margin: 0;
+  /*----- Designer -----*/
+  background: linear-gradient(90deg, #07060d, #050037, #000074);
+  background-size: 300% 300%;
+  /*----- Animation -----*/
+  animation: colors 10s ease infinite;
 }
 
 /*----------------- ANIMATION ----------------*/
 @keyframes colors {
-    from {
-        background-position: 0% 50%;
-    }
+  from {
+    background-position: 0% 50%;
+  }
 
-    50% {
-        background-position: 100% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
+  }
 
-    to {
-        background-position: 0% 50%;
-    }
-
-}
-
-/*------------------ Estrelado --------------------*/
-.stars {
-    /*----- Size -----*/
-    width: 4px;
-    height: 4px;
-    /*----- Position -----*/
-    margin-left: 38%;
-    position: relative;
-    display: block;
-    /*----- Designer -----*/
-    border-radius: 50%;
-    box-shadow:
-        200px -100px white,
-        500px -50px white,
-        60px 30px white,
-        -300px 60px white,
-        -200px 130px white,
-        400px 200px white,
-        600px 300px white,
-        -250px 400px white,
-        450px 400px white,
-        -190px 500px white,
-        40px 600px white,
-        150px 700px white,
-        100px 450px white,
-        320px 760px white,
-        -140px 900px white,
-        1600px 300px white,
-        -850px 390px white,
-        1450px 440px white,
-        -790px 570px white,
-        140px 630px white,
-        950px 780px white,
-        1100px 650px white,
-        1320px 60px white,
-        -840px 900px white,
-        -650px 830px white;
-    /*----- Animation -----*/
-    animation: anim-stars 5s linear infinite;
-}
-
-.stars::after {
-    /*----- Size -----*/
-    width: 4px;
-    height: 4px;
-    /*----- Position -----*/
-    content: " ";
-    position: absolute;
-    top: 1000px;
-    /*----- Designer -----*/
-    border-radius: 50%;
-    box-shadow:
-        200px -100px white,
-        500px -50px white,
-        60px 30px white,
-        -300px 60px white,
-        -200px 130px white,
-        400px 200px white,
-        600px 300px white,
-        -250px 400px white,
-        450px 400px white,
-        -190px 500px white,
-        40px 600px white,
-        150px 700px white,
-        100px 450px white,
-        320px 760px white,
-        -140px 900px white,
-        1600px 300px white,
-        -850px 390px white,
-        1450px 440px white,
-        -790px 570px white,
-        140px 630px white,
-        950px 780px white,
-        1100px 650px white,
-        1320px 60px white,
-        -840px 900px white,
-        -650px 830px white;
-}
-
-/*----------------- ANIMATION ----------------*/
-@keyframes anim-stars {
-    from {
-        transform: translateY(0px);
-    }
-
-    to {
-        transform: translateY(-1000px);
-    }
+  to {
+    background-position: 0% 50%;
+  }
 }
 
 /*--------------------- CUBE ----------------------*/
 #cubo {
-    /*----- Size -----*/
-    width: auto;
-    height: auto;
-    /*----- 3D -----*/
-    transform-style: preserve-3d;
+  /*----- Size -----*/
+  width: auto;
+  height: auto;
+  /*----- 3D -----*/
+  transform-style: preserve-3d;
 }
 
 .cube {
-    /*----- Size -----*/
-    width: 300px;
-    height: 300px;
-    /*----- Position -----*/
-    margin-top: 39vh;
-    margin-left: 38%;
-    /*----- 3D -----*/
-    transform-style: preserve-3d;
+  /*----- Size -----*/
+  width: 300px;
+  height: 300px;
+  /*----- Position -----*/
+  margin: 300px auto;
+  z-index: 9999;
+  display: flex;
+  /*----- 3D -----*/
+  transform-style: preserve-3d;
 }
 
 #cube_animation {
-    animation: rotate1 10s linear infinite;
+  animation: rotate2 10s linear infinite;
 }
 
 .face {
-    /*----- Size -----*/
-    width: 300px;
-    height: 300px;
-    /*----- Position -----*/
-    position: absolute;
-    display: flex;
-    align-items: center;
-    /*----- Designer -----*/
-    border: 2px solid rgb(255, 255, 255);
-    background: linear-gradient(-180deg, black 30%, #11009E 80%);
-    background-size: 125% 125%;
-    opacity: 1;
-    animation:
-        face 10s linear infinite;
+  /*----- Size -----*/
+  width: 400px;
+  height: 400px;
+  /*----- Position -----*/
+  position: absolute;
+  display: flex;
+  align-items: center;
+  /*----- Designer -----*/
+  border: transparent;
+  background: linear-gradient(-180deg, #0b006d 30%, rgba(100, 100, 100, 0.836) 80%);
+  background-size: 125% 125%;
+  opacity: 1;
+
+  animation: face 5s linear infinite;
 }
 
 .face_2 {
-    /*----- Size -----*/
-    width: 300px;
-    height: 300px;
-    /*----- Position -----*/
-    position: absolute;
-    display: flex;
-    align-items: center;
-    /*----- Designer -----*/
-    border: 2px solid rgb(255, 255, 255);
-    opacity: 1;
+  /*----- Size -----*/
+  width: 400px;
+  height: 400px;
+  /*----- Position -----*/
+  position: absolute;
+  display: flex;
+  align-items: center;
+  /*----- Designer -----*/
+  border: transparent;
+  opacity: 1;
 }
 
 .front {
-    transform: translateZ(150px);
+  transform: translateZ(200px);
 }
 
 .right {
-    transform: rotateY(90deg) translateZ(150px);
+  transform: rotateY(90deg) translateZ(200px);
 }
 
 .back {
-    transform: rotateY(180deg) translateZ(150px);
+  transform: rotateY(180deg) translateZ(200px);
 }
 
 .left {
-    transform: rotateY(-90deg) translateZ(150px);
+  transform: rotateY(-90deg) translateZ(200px);
 }
 
 .top {
-    transform: rotateX(90deg) translateZ(150px);
-    background-color: black;
+  transform: rotateX(90deg) translateZ(200px);
+  background-color: #0b006d;
 }
 
 .bottom {
-    transform: rotateX(-90deg) translateZ(150px);
-    background-color: #11009E;
-
+  transform: rotateX(-90deg) translateZ(200px);
+  background-color: rgba(100, 100, 100, 0.836);
 }
 
+.shadow {
+  border: transparent;
+  display: flex;
+  transform: rotateX(-90deg) translateZ(250px);
+  background-color: rgba(100, 100, 100, 0.836);
+  filter: blur(20px);
+  box-shadow: 0px 20px 200px 150px rgba(100, 100, 100, 0.836);
+}
 
 /*----------------- ANIMATION ----------------*/
 
 @keyframes rotate1 {
-    from {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
 
-        transform: rotateX(0deg) rotateY(0deg);
-    }
-
-    to {
-        transform: rotateZ(5deg);
-        transform: rotateX(360deg) rotateY(360deg);
-    }
+  to {
+    transform: rotateZ(5deg);
+    transform: rotateX(360deg) rotateY(360deg);
+  }
 }
 
 @keyframes rotate2 {
-    from {
-        transform: rotateY(0deg) rotateX(5deg);
-    }
+  0% {
+    transform: rotateX(-30deg) rotateY(0deg);
+  }
 
-    to {
-        transform: rotateY(360deg) rotateX(5deg);
-    }
+  100% {
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
 }
 
 @keyframes face {
-    from {
-        background-position: 0% 25%;
-    }
+  from {
+    background-position: 0% 25%;
+  }
 
-    50% {
-        background-position: 100% 100%;
-    }
+  50% {
+    background-position: 100% 100%;
+  }
 
-    to {
-        background-position: 0% 25%;
-    }
+  to {
+    background-position: 0% 25%;
+  }
 }
 
 /*--------------------- CONFIGS ---------------------*/
 #button {
-    /*----- Size -----*/
-    width: 100%;
-    /*----- Position -----*/
-    margin-top: -5px;
-    position: relative;
-    /*----- Designer -----*/
-    border: none;
-    background-color: transparent;
+  /*----- Size -----*/
+  width: 100%;
+  /*----- Position -----*/
+  margin: 0 auto;
+  position: relative;
+  /*----- Designer -----*/
+  border: none;
+  background-color: transparent;
 }
 
 #botao {
-    /*----- Size -----*/
-    width: 70px;
-    height: 60px;
-    /*----- Designer -----*/
-    background: transparent;
-    border: 2px solid white;
-    border-radius: 50%;
+  /*----- Size -----*/
+  width: 70px;
+  height: 60px;
+  padding: 2px;
+  /*----- Position -----*/
+  position: relative;
+  margin: 0;
+  /*----- Designer -----*/
+  background: white;
+  border: 2px solid white;
+  border-radius: 50%;
 }
 
 #img1 {
-    /*----- Size -----*/
-    width: 100%;
-    height: 100%;
+  /*----- Size -----*/
+  width: 100%;
+  height: 100%;
 }
 
 #config {
-    /*----- Size -----*/
-    width: 200px;
-    height: 90%;
-    /*----- Position -----*/
-    padding: 10px;
-    display: none;
-    position: absolute;
-    z-index: 1;
-    /*----- Designer -----*/
-    background-color: white;
-    font-size: 20px;
-    border: 2px solid black;
-    /*----- Animation -----*/
-    transition: all 2s;
+  /*----- Size -----*/
+  width: auto;
+  max-width: 200px;
+  height: auto;
+  max-height: 900px;
+  /*----- Position -----*/
+  padding: 10px;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  /*----- Designer -----*/
+  background-color: rgba(0, 0, 0, 0.788);
+  font-size: 20px;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  /*----- Animation -----*/
 }
 
-
 #config p {
-    /*----- Position -----*/
-    margin-top: 2px;
-    margin-left: 5px;
-    margin-bottom: 10px;
-    padding: 0;
-    text-align: center;
+  /*----- Position -----*/
+  margin-top: 2px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  text-align: left;
 
-    /*----- Designer -----*/
-    font-family: Cubic;
-    color: black;
+  /*----- Designer -----*/
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  border-left: 2px solid white;
 }
 
 #config button {
-    /*----- Position -----*/
-    margin-left: 10px;
-    margin-bottom: 10px;
-    /*----- Designer -----*/
-    font-size: 20px;
-    border-radius: 20px;
-    background-color: transparent;
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    color: black;
+  /*----- Position -----*/
+  margin-left: 10px;
+  margin-bottom: 10px;
+  /*----- Designer -----*/
+  font-size: 20px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  font-family: "Times New Roman", Times, serif;
 }
 
 #config input {
-    /*----- Position -----*/
-    margin-left: 10px;
-    margin-bottom: 10px;
-    /*----- Designer -----*/
-    font-size: 20px;
-    border-radius: 20px;
-    background-color: transparent;
-    color: black;
+  /*----- Position -----*/
+  margin-left: 10px;
+  margin-bottom: 10px;
+  /*----- Designer -----*/
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border: 1px solid white;
+}
+
+#config hr {
+  border: 1px solid rgb(255, 255, 255);
 }
