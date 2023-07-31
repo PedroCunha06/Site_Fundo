@@ -22,7 +22,7 @@ body {
   /*----- Position -----*/
   margin: 0;
   /*----- Designer -----*/
-  background: linear-gradient(90deg, #07060d, #050037, #000074);
+  background: linear-gradient(90deg, #000000, #050037, #000074);
   background-size: 300% 300%;
   /*----- Animation -----*/
   animation: colors 10s ease infinite;
@@ -78,7 +78,7 @@ body {
   align-items: center;
   /*----- Designer -----*/
   border: transparent;
-  background: linear-gradient(-180deg, #0b006d 30%, rgba(100, 100, 100, 0.836) 80%);
+  background: linear-gradient(-180deg, #0b006d 30%, #ff0000 80%);
   background-size: 125% 125%;
   opacity: 1;
 
@@ -121,16 +121,16 @@ body {
 
 .bottom {
   transform: rotateX(-90deg) translateZ(200px);
-  background-color: rgba(100, 100, 100, 0.836);
+  background-color: #ff0000;
 }
 
 .shadow {
   border: transparent;
   display: flex;
   transform: rotateX(-90deg) translateZ(250px);
-  background-color: rgba(100, 100, 100, 0.836);
+  background-color: #ff0000;
   filter: blur(20px);
-  box-shadow: 0px 20px 200px 150px rgba(100, 100, 100, 0.836);
+  box-shadow: 0px 20px 200px 150px #ff0000;
 }
 
 /*----------------- ANIMATION ----------------*/

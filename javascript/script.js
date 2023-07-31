@@ -1,8 +1,6 @@
-/* 
-Declaração de Variáveis
-*/
-let botao = document.querySelector("#botao");
-let aplicar = document.querySelector("#aply");
+// Declaração de Variáveis
+const botao = document.querySelector("#botao");
+const aplicar = document.querySelector("#aply");
 let escolha_fundo;
 let baixo;
 let alto;
@@ -11,23 +9,21 @@ let escolha_rotate;
 let escolha_border;
 let escolha_cor_fundo;
 
-/* 
-Eventos
-*/
-botao.addEventListener("click", function () {
-  let div = document.querySelector("#config");
-  let botao = document.querySelector("#botao");
+// Eventos
+botao.addEventListener("click", toggleConfig);
+
+aplicar.addEventListener("click", settings);
+
+function toggleConfig() {
+  const div = document.querySelector("#config");
   if (div.style.display === "none") {
     div.style.display = "block";
-    div.style.position = "absolute";
     botao.style.border = "2px solid black";
   } else {
     div.style.display = "none";
     botao.style.border = "2px solid white";
   }
-});
-
-aplicar.addEventListener("click", settings);
+}
 
 function settings() {
   let div = document.querySelector("#config");
@@ -37,20 +33,18 @@ function settings() {
   let bottom = document.querySelector(".bottom");
   let top = document.querySelector(".top");
   let cube = document.querySelector("#cube_animation");
-  let shadow = document.querySelector('.shadow')
+  let shadow = document.querySelector(".shadow");
 
   defineCor();
 
+
   switch (escolha_fundo) {
-    case "you": {
+    case "you":
       color.style.background = escolha_cor_fundo;
       color.style.backgroundSize = "300% 300%";
-      console.log(escolha_cor_fundo);
       break;
-    }
-
-    case "minecraft": {
-      face.forEach(function (face) {
+    case "minecraft":
+      face.forEach((face) => {
         face.style.backgroundImage = "url(../image/lado_cubo.jpg)";
         face.style.backgroundSize = "110% 115%";
         face.style.animation = "none";
@@ -59,24 +53,20 @@ function settings() {
       color.style.backgroundImage = "url(../image/fundo.jpg_large)";
       color.style.backgroundSize = "100% 100%";
       break;
-    }
   }
 
   switch (escolha_rotate) {
-    case "rota1": {
+    case "rota1":
       shadow.style.display = "none";
       cube.style.animation = "rotate1 10s linear infinite";
       break;
-    }
-    case "rota2": {
-      shadow.style.display = "flex"
+    case "rota2":
+      shadow.style.display = "flex";
       cube.style.animation = "rotate2 10s linear infinite";
       break;
-    }
   }
 
   if (escolha_fundo === "minecraft") {
-    console.log("Deu minecraft");
     top.style.backgroundImage = "url(../image/cima_cubo.png)";
     top.style.border = "1px solid black";
     bottom.style.backgroundImage = "url(../image/baixo_cubo.png)";
@@ -84,16 +74,16 @@ function settings() {
     color.style.animation = "none";
     shadow.style.display = "none";
   } else {
-    face.forEach(function (face) {
+    face.forEach((face) => {
       face.style.background = escolha_face;
-      face.style.border = "2px solid " + escolha_border;
+      face.style.border = escolha_border != "none" ? "2px solid " + escolha_border : escolha_border;
       face.style.backgroundSize = "125% 125%";
     });
 
+    bottom.style.border = escolha_border != "none" ? "2px solid " + escolha_border : escolha_border;
+    top.style.border = escolha_border != "none" ? "2px solid " + escolha_border : escolha_border;
     bottom.style.background = baixo;
     top.style.background = alto;
-    bottom.style.border = "2px solid " + escolha_border;
-    top.style.border = "2px solid " + escolha_border;
     color.style.animation = "colors 10s ease infinite";
   }
 
@@ -117,6 +107,10 @@ function escolhaCor3(value) {
   escolha_border = value;
 }
 
+function defineBorder() {
+  escolha_border = "none";
+}
+
 function defineCor() {
   let y = document.querySelector("#cor1");
   let x = document.querySelector("#cor2");
@@ -126,7 +120,7 @@ function defineCor() {
     "linear-gradient(-180deg, " + alto + " 30%, " + baixo + " 80%)";
 }
 
-function defineBack() {
+function defineBackground() {
   let y = document.querySelector("#back1");
   let x = document.querySelector("#back2");
   let z = document.querySelector("#back3");

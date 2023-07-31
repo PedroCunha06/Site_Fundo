@@ -24,19 +24,19 @@
             <input
               type="color"
               value="#07060d"
-              onchange="defineBack()"
+              onchange="defineBackground()"
               id="back1"
             />
             <input
               type="color"
               value="#050037"
-              onchange="defineBack()"
+              onchange="defineBackground()"
               id="back2"
             />
             <input
               type="color"
               value="#000074"
-              onchange="defineBack()"
+              onchange="defineBackground()"
               id="back3"
             />
           </div>
@@ -50,7 +50,7 @@
           <p>Face</p>
 
           <input type="color" value="#0b006d" id="cor2" />
-          <input type="color" value="#000000" id="cor1" />
+          <input type="color" value="#ff0000" id="cor1" />
         </div>
         <hr />
         <div>
@@ -60,6 +60,12 @@
             type="color"
             value="#ffffff"
             onchange="escolhaCor3(this.value)"
+          />
+
+          <input
+            type="button"
+            value="None"
+            onclick="defineBorder()"
           />
         </div>
         <hr />
