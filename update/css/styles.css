@@ -1,0 +1,127 @@
+body {
+  /*----- Size -----*/
+  min-width: 100vw;
+  min-height: 100vh;
+  /*----- Position -----*/
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.color {
+  /*----- Size -----*/
+  width: 100vw;
+  height: 100vh;
+  /*----- Position -----*/
+  margin: 0;
+  position: relative;
+  /*----- Designer -----*/
+  background: linear-gradient(90deg, #000000, #050037, #000074);
+  background-size: 300% 300%;
+  /*----- Animation -----*/
+  animation: colors 10s ease infinite;
+}
+
+#cubo {
+  /*----- Size -----*/
+  width: auto;
+  height: auto;
+  /*----- 3D -----*/
+  transform-style: preserve-3d;
+}
+
+.cube {
+  /*----- Size -----*/
+  width: 30vw;
+  height: 30vh;
+  /*----- Position -----*/
+  margin: 30vh auto;
+  background-color: transparent;
+  z-index: 9999;
+  display: flex;
+  /*----- 3D -----*/
+  transform-style: preserve-3d;
+}
+
+#cube_animation {
+  animation: rotate2 10s linear infinite;
+}
+
+@keyframes rotate2 {
+  0% {
+    transform: rotateX(-30deg) rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+}
+
+.face_1 {
+  /*----- Size -----*/
+  width: 100%;
+  height: 100%;
+  /*----- Position -----*/
+  position: absolute;
+  display: flex;
+  align-items: center;
+  /*----- Designer -----*/
+  border: transparent;
+  background: linear-gradient(-180deg, #0b006d 30%, #ff0000 80%);
+  background-size: 125% 125%;
+  opacity: 1;
+}
+
+.face_2 {
+  /*----- Size -----*/
+  width: 100%;
+  height: 100%;
+  /*----- Position -----*/
+  position: absolute;
+  display: flex;
+  align-items: center;
+  /*----- Designer -----*/
+  border: transparent;
+  opacity: 1;
+}
+
+.front {
+  --space_face: 0;
+  transform: translateZ(calc(var(--space_face) * 1px));
+}
+
+.left {
+  --space_face: 0;
+  transform: rotateY(-90deg) translateZ(calc(var(--space_face) * 1px));
+}
+
+.right {
+  --space_face: 0;
+  transform: rotateY(90deg) translateZ(calc(var(--space_face) * 1px));
+}
+
+.back {
+  --space_face: 0;
+  transform: rotateY(180deg) translateZ(calc(var(--space_face) * 1px));
+}
+
+.top {
+  --space_face: 0;
+  transform: rotateX(90deg) translateZ(calc(var(--space_face) * 1px));
+  background-color: #0b006d;
+}
+
+.bottom {
+  --space_face: 0;
+  transform: rotateX(-90deg) translateZ(calc(var(--space_face) * 1px));
+  background-color: #ff0000;
+}
+
+.shadow {
+  --space_face: 0;
+  transform: rotateX(-90deg) translateZ(calc(var(--space_face) * 1.25px));
+  background-color: #ff0000;
+  filter: blur(20px);
+  box-shadow: 0px 20px 200px 150px #ff0000;
+}

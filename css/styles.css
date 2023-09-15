@@ -7,7 +7,7 @@
 body {
   /*----- Size -----*/
   width: 100%;
-  height: 1000px;
+  height: 100vh;
   /*----- Position -----*/
   display: flex;
   justify-content: center;
@@ -17,7 +17,7 @@ body {
 
 .color {
   /*----- Size -----*/
-  width: 300vh;
+  width: 100vw;
   height: 100vh;
   /*----- Position -----*/
   margin: 0;
@@ -54,10 +54,10 @@ body {
 
 .cube {
   /*----- Size -----*/
-  width: 300px;
-  height: 300px;
+  width: 30vh;
+  height: 30vh;
   /*----- Position -----*/
-  margin: 300px auto;
+  margin: 25vh auto;
   z-index: 9999;
   display: flex;
   /*----- 3D -----*/
@@ -68,10 +68,24 @@ body {
   animation: rotate2 10s linear infinite;
 }
 
+@media only screen and (max-width: 1000px) {
+  .cubo {
+    /*----- Size -----*/
+    width: 100px;
+    height: 100px;
+  }
+
+  body {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
 .face {
   /*----- Size -----*/
-  width: 400px;
-  height: 400px;
+  width: 40vh;
+  height: 40vh;
   /*----- Position -----*/
   position: absolute;
   display: flex;
@@ -87,8 +101,8 @@ body {
 
 .face_2 {
   /*----- Size -----*/
-  width: 400px;
-  height: 400px;
+  width: 40vh;
+  height: 40vh;
   /*----- Position -----*/
   position: absolute;
   display: flex;
@@ -99,35 +113,35 @@ body {
 }
 
 .front {
-  transform: translateZ(200px);
+  transform: translateZ(20vh);
 }
 
 .right {
-  transform: rotateY(90deg) translateZ(200px);
+  transform: rotateY(90deg) translateZ(20vh);
 }
 
 .back {
-  transform: rotateY(180deg) translateZ(200px);
+  transform: rotateY(180deg) translateZ(20vh);
 }
 
 .left {
-  transform: rotateY(-90deg) translateZ(200px);
+  transform: rotateY(-90deg) translateZ(20vh);
 }
 
 .top {
-  transform: rotateX(90deg) translateZ(200px);
+  transform: rotateX(90deg) translateZ(20vh);
   background-color: #0b006d;
 }
 
 .bottom {
-  transform: rotateX(-90deg) translateZ(200px);
+  transform: rotateX(-90deg) translateZ(20vh);
   background-color: #ff0000;
 }
 
 .shadow {
   border: transparent;
   display: flex;
-  transform: rotateX(-90deg) translateZ(250px);
+  transform: rotateX(-90deg) translateZ(25vh);
   background-color: #ff0000;
   filter: blur(20px);
   box-shadow: 0px 20px 200px 150px #ff0000;
@@ -193,7 +207,7 @@ body {
   /*----- Designer -----*/
   background: white;
   border: 2px solid white;
-  border-radius: 50%;
+  border-radius: 10%;
 }
 
 #img1 {
@@ -262,4 +276,53 @@ body {
 
 #config hr {
   border: 1px solid rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 1000px) {
+  .face {
+    /*----- Size -----*/
+    width: 200px;
+    height: 200px;
+  }
+
+  .face_2 {
+    /*----- Size -----*/
+    width: 200px;
+    height: 200px;
+  }
+
+  .front {
+    transform: translateZ(100px);
+  }
+
+  .right {
+    transform: rotateY(90deg) translateZ(100px);
+  }
+
+  .back {
+    transform: rotateY(180deg) translateZ(100px);
+  }
+
+  .left {
+    transform: rotateY(-90deg) translateZ(100px);
+  }
+
+  .top {
+    transform: rotateX(90deg) translateZ(100px);
+    background-color: #0b006d;
+  }
+
+  .bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+    background-color: #ff0000;
+  }
+
+  .shadow {
+    border: transparent;
+    display: flex;
+    transform: rotateX(-90deg) translateZ(125px);
+    background-color: #ff0000;
+    filter: blur(20px);
+    box-shadow: 0px 20px 200px 150px #ff0000;
+  }
 }
