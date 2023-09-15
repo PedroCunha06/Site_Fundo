@@ -1,32 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Screen Magic</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <script defer src="javascript/script.js"></script>
-  </head>
 
-  <body>
-    <div class="color">
-      <div id="button">
-        <button id="buttonClick">
-          <img src="image" alt="" id="img1">
-        </button>
-      </div>
-      <div id="cubo">
-        <div class="cube" id="cube_animation" data-cube>
-          <div class="face_1 front" data-face></div>
-          <div class="face_1 left" data-face></div>
-          <div class="face_1 right" data-face></div>
-          <div class="face_1 back" data-face></div>
-          <div class="face_2 top" data-face></div>
-          <div class="face_2 bottom" data-face></div>
-          <div class="face_2 shadow" data-face></div>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Screen Magic</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="javascript/script.js"></script>
+</head>
+
+<body>
+  <div class="color">
+    <div class="button">
+      <button class="buttonClick" data-button>
+        <img src="image/configButton.png" id="img1">
+      </button>
+    </div>
+    <div class="boxConfig" data-box>
+      <div class="orgBoxConfig">
+        <div>
+          <p>Background</p>
+        </div>
+        <div>
+          <p>Face</p>
+        </div>
+        <div>
+          <p>Border</p>
+        </div>
+        <div>
+          <p>Rotate</p>
         </div>
       </div>
+      <button>
+        Apply
+      </button>
+      <button data-back>
+         Back
+      </button>
     </div>
-  </body>
+    <div id="cubo">
+      <div class="cube" id="cube_animation" data-cube>
+        <div class="face_1 front" data-face></div>
+        <div class="face_1 left" data-face></div>
+        <div class="face_1 right" data-face></div>
+        <div class="face_1 back" data-face></div>
+        <div class="face_2 top" data-face></div>
+        <div class="face_2 bottom" data-face></div>
+        <div class="face_2 shadow" data-face></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
 </html>

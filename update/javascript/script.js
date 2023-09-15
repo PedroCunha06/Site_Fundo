@@ -3,9 +3,14 @@ const SPACE_CUBE = (FACE_CUBE / 2);
 
 const cubeElem = document.querySelector('[data-cube]');
 const faceElem = document.querySelectorAll('[data-face]');
+const buttonElem = document.querySelector('[data-button]');
+const buttonBackElem = document.querySelector('[data-back]');
+const boxConfigElem = document.querySelector('[data-box]');
 
 setPixelToWorldScale()
 window.addEventListener('resize', setPixelToWorldScale);
+buttonElem.addEventListener('click', openBoxConfig)
+buttonBackElem.addEventListener('click', openBoxConfig)
 
 function setPixelToWorldScale() {
     // innerWidht => Retorna a largura da area da janela
@@ -25,4 +30,14 @@ function setFaceToWorldScale(worldToPixelScale) {
     faceElem.forEach((face) => {
         face.style.setProperty("--space_face", ((SPACE_CUBE * worldToPixelScale) - 1));
     })
+}
+
+function openBoxConfig() {
+    if(boxConfigElem.style.display != "flex") {
+        boxConfigElem.style.display = "flex";
+        buttonElem.style.display = "none"
+    } else {
+        boxConfigElem.style.display = "none";
+        buttonElem.style.display = "block"
+    }
 }

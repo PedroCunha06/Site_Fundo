@@ -1,3 +1,4 @@
+/*--------------------- BACKGROUND ---------------------*/
 body {
   /*----- Size -----*/
   min-width: 100vw;
@@ -23,6 +24,8 @@ body {
   animation: colors 10s ease infinite;
 }
 
+/*--------------------- CUBE ---------------------*/
+
 #cubo {
   /*----- Size -----*/
   width: auto;
@@ -42,20 +45,6 @@ body {
   display: flex;
   /*----- 3D -----*/
   transform-style: preserve-3d;
-}
-
-#cube_animation {
-  animation: rotate2 10s linear infinite;
-}
-
-@keyframes rotate2 {
-  0% {
-    transform: rotateX(-30deg) rotateY(0deg);
-  }
-
-  100% {
-    transform: rotateX(-30deg) rotateY(360deg);
-  }
 }
 
 .face_1 {
@@ -124,4 +113,52 @@ body {
   background-color: #ff0000;
   filter: blur(20px);
   box-shadow: 0px 20px 200px 150px #ff0000;
+}
+
+/*--------------------- BUTTON CONFIG ---------------------*/
+#img1 {
+  width: 100%;
+  height: 100%;
+}
+
+.buttonClick {
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+  margin: 2px;
+
+  position: absolute;
+
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 10%;
+}
+
+.button {
+  width: 100%;
+
+  margin: 2px auto;
+  position: relative;
+
+  border: none;
+  background-color: transparent;
+}
+
+/*--------------------- BOX CONFIG ---------------------*/
+.boxConfig {
+  width: 100%;
+  height: 20%;
+  max-height: 300px;
+
+  margin: 0 auto;
+  position: absolute;
+  z-index: 1;
+  display: none;
+
+  background-color: rgba(184, 184, 184, 0.315);
+  border-bottom: 2px solid white;
+}
+
+.orgBoxConfig {
+  display: flex;
 }
