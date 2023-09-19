@@ -1,3 +1,5 @@
-
-
-const CUBE_FACE = 100;
+import {
+    getValuesBackGround, 
+    getValuesFace,
+    getValuesBorder
+} from "./pushValues";

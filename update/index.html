@@ -18,25 +18,59 @@
     </div>
     <div class="boxConfig" data-box>
       <div class="orgBoxConfig">
-        <div>
+        <div class="box">
           <p>Background</p>
+          <div class="boxInput">
+            <p>Colors</p>
+            <center>
+              <input type="color" name="Cor Esquerda" id="back1">
+              <input type="color" name="Cor do Meio" id="back2">
+              <input type="color" name="Cor Direita" id="back3">
+            </center>
+
+          </div>
         </div>
-        <div>
+        <div class="box">
           <p>Face</p>
+          <div class="boxInput">
+            <p>Colors</p>
+            <center>
+              <input type="color" name="Cor Cima" id="color1">
+              <input type="color" name="Cor Baixo" id="color2">
+            </center>
+          </div>
         </div>
-        <div>
+        <div class="box">
           <p>Border</p>
+          <div class="boxInput">
+            <p>Colors</p>
+            <center>
+              <input type="color" name="Cor Cima" id="border1">
+            </center>
+            <p>Presence Border</p>
+            <center>
+              <input type="button" value="Yes" id="borderYes">
+              <input type="button" value="No" id="borderNo">
+            </center>
+          </div>
         </div>
-        <div>
+        <div class="box">
           <p>Rotate</p>
         </div>
       </div>
-      <button>
-        Apply
-      </button>
-      <button data-back>
-         Back
-      </button>
+      <div class="boxButton">
+        <div>
+          <button class="buttonApply" data-apply>
+            Apply
+          </button>
+        </div>
+        <div>
+          <button class="buttonBack" data-back>
+            Back
+          </button>
+        </div>
+
+      </div>
     </div>
     <div id="cubo">
       <div class="cube" id="cube_animation" data-cube>
