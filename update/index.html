@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Screen Magic</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <script defer src="javascript/script.js"></script>
+  <script defer src="javascript/script.js"  type="module"></script>
 </head>
 
 <body>
-  <div class="color">
+  <div class="color" data-background>
     <div class="button">
       <button class="buttonClick" data-button>
         <img src="image/configButton.png" id="img1">
@@ -47,15 +47,11 @@
             <center>
               <input type="color" name="Cor Cima" id="border1">
             </center>
-            <p>Presence Border</p>
             <center>
-              <input type="button" value="Yes" id="borderYes">
-              <input type="button" value="No" id="borderNo">
+              <input type="checkbox" placeholder="No Border" id="borderNo" name="no">
+              <label for="no" style="font-size: 20px; color: white;">No Border</label>
             </center>
           </div>
-        </div>
-        <div class="box">
-          <p>Rotate</p>
         </div>
       </div>
       <div class="boxButton">
@@ -78,9 +74,9 @@
         <div class="face_1 left" data-face></div>
         <div class="face_1 right" data-face></div>
         <div class="face_1 back" data-face></div>
-        <div class="face_2 top" data-face></div>
-        <div class="face_2 bottom" data-face></div>
-        <div class="face_2 shadow" data-face></div>
+        <div class="face_2 top" data-faceUp></div>
+        <div class="face_2 bottom" data-faceDown></div>
+        <div class="face_2 shadow" data-faceShadow></div>
       </div>
     </div>
   </div>

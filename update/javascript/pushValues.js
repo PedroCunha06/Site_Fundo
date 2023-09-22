@@ -1,4 +1,4 @@
-export default function getValuesBackGround() {
+function getValuesBackGround() {
     let escolha;
     let y = document.querySelector("#back1");
     let x = document.querySelector("#back2");
@@ -10,7 +10,7 @@ export default function getValuesBackGround() {
     )
 }
 
-export default function getValuesFace() {
+function getValuesFace() {
     let escolha;
     let x = document.querySelector("#color1");
     let y = document.querySelector("#color2");
@@ -21,7 +21,7 @@ export default function getValuesFace() {
     )
 }
 
-export default function getValuesBorder() {
+function getValuesBorder() {
     let escolha;
     let x = document.querySelector("#border")
     let yes = document.querySelector("#borderYes")

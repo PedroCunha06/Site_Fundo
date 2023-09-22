@@ -1,16 +1,26 @@
 const FACE_CUBE = 275;
 const SPACE_CUBE = (FACE_CUBE / 2);
 
+const  backElem = document.querySelector('[data-background]')
+
 const cubeElem = document.querySelector('[data-cube]');
 const faceElem = document.querySelectorAll('[data-face]');
+const faceUpElem =document.querySelector('[data-faceUp]');
+const faceDownElem =document.querySelector('[data-faceDown]');
+const faceShadowElem =document.querySelector('[data-faceShadow]');
+
 const buttonElem = document.querySelector('[data-button]');
 const buttonBackElem = document.querySelector('[data-back]');
-const boxConfigElem = document.querySelector('[data-box]');
+const buttonApplyElem = document.querySelector('[data-apply]');
+const boxConfigElem = document.querySelector('[data-box]')
 
 setPixelToWorldScale()
 window.addEventListener('resize', setPixelToWorldScale);
-buttonElem.addEventListener('click', openBoxConfig)
-buttonBackElem.addEventListener('click', openBoxConfig)
+buttonElem.addEventListener('click', openBoxConfig);
+buttonBackElem.addEventListener('click', openBoxConfig);
+buttonApplyElem.addEventListener('click', ApplyCube);
+
+
 
 function setPixelToWorldScale() {
     // innerWidht => Retorna a largura da area da janela
@@ -21,6 +31,10 @@ function setPixelToWorldScale() {
     if (worldToPixelScale > 1.5) {
         worldToPixelScale = 1.5;
     }
+   // Calcular uma formula q em certo estagio da tela, a proporcao nao cresca, mas diminua
+    console.log(window.innerHeight)
+    console.log(window.innerWidth)
+    console.log(worldToPixelScale)
     cubeElem.style.width = `${FACE_CUBE * worldToPixelScale}px`
     cubeElem.style.height = `${FACE_CUBE * worldToPixelScale}px`
     setFaceToWorldScale(worldToPixelScale);
@@ -30,6 +44,9 @@ function setFaceToWorldScale(worldToPixelScale) {
     faceElem.forEach((face) => {
         face.style.setProperty("--space_face", ((SPACE_CUBE * worldToPixelScale) - 1));
     })
+    faceShadowElem.style.setProperty("--space_face", ((SPACE_CUBE * worldToPixelScale) - 1));
+    faceDownElem.style.setProperty("--space_face", ((SPACE_CUBE * worldToPixelScale) - 1));
+    faceUpElem.style.setProperty("--space_face", ((SPACE_CUBE * worldToPixelScale) - 1));
 }
 
 function openBoxConfig() {
@@ -40,4 +57,67 @@ function openBoxConfig() {
         boxConfigElem.style.display = "none";
         buttonElem.style.display = "block"
     }
+}
+
+function ApplyCube() {
+    const background = getValuesBackGround();
+    const faces = getValuesFace();
+    const faceUp = getValueFaceTop();
+    const faceDown = getValueFaceDown();
+    const border = getValuesBorder();
+
+    faceElem.forEach((face) => {
+        face.style.background = faces;
+        face.style.border = border;
+    });
+        faceUpElem.style.backgroundColor = faceUp.value;
+        faceDownElem.style.backgroundColor = faceDown.value;
+        faceShadowElem.style.backgroundColor = faceDown.value;
+        faceShadowElem.style.boxShadow = `0px 20px 200px 150px ${faceDown.value}`
+       
+    
+
+    backElem.style.background = background;
+}
+
+function getValuesBackGround() {
+    let escolha;
+    let y = document.querySelector("#back1");
+    let x = document.querySelector("#back2");
+    let z = document.querySelector("#back3");
+    escolha = `linear-gradient(90deg,  ${y.value}, ${x.value}, ${z.value})`
+    
+    return (
+       escolha
+    )
+}
+
+function getValuesFace() {
+    let escolha;
+    let x = getValueFaceTop();
+    let y = getValueFaceDown();
+    escolha = `linear-gradient(-180deg, ${x.value} 30%, ${y.value} 80%)`
+
+    return (
+        escolha
+    )
+}
+
+function getValueFaceTop() {
+    let x = document.querySelector("#color1");
+    return x;
+}
+function getValueFaceDown() {
+     let x = document.querySelector("#color2");
+    return x;
+}
+
+function getValuesBorder() {
+    let escolha;
+    let x = document.querySelector("#border1");
+    let no = document.querySelector("#borderNo");
+
+    console.log(no.click)
+
+    return no.checked ? `none` : `1px solid ${x.value}`;
 }
