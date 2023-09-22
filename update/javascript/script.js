@@ -1,5 +1,6 @@
 const FACE_CUBE = 275;
 const SPACE_CUBE = (FACE_CUBE / 2);
+const BACKGROUNDSIZE = 100;
 
 const  backElem = document.querySelector('[data-background]')
 
@@ -68,6 +69,7 @@ function ApplyCube() {
 
     faceElem.forEach((face) => {
         face.style.background = faces;
+        face.style.backgroundSize = `${BACKGROUNDSIZE}%, ${BACKGROUNDSIZE}%`
         face.style.border = border;
     });
         faceUpElem.style.backgroundColor = faceUp.value;
@@ -78,6 +80,9 @@ function ApplyCube() {
     
 
     backElem.style.background = background;
+
+    
+    openBoxConfig();
 }
 
 function getValuesBackGround() {
